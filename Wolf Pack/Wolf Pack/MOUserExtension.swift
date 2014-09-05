@@ -77,7 +77,7 @@ extension MOUser: FromJSON, Fetchable {
     }
     
     class func me() -> MOUser {
-        return self.fetchOrCreate("5409ef307f48400200582d9a")
+        return self.fetchOrCreate("540a3f4ac2d2cb0200f96f99")
     }
     
     func fullName() -> String {
