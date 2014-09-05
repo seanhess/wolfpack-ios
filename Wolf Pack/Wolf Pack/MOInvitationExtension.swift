@@ -19,8 +19,4 @@ extension MOInvitation {
 
         return invite
     }
-
-    func save() -> Bool {
-        return ModelUtil.commitDefaultMOC()
-    }
 }

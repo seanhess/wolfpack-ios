@@ -22,8 +22,4 @@ extension MOChild {
 
         return child
     }
-
-    func save() -> Bool {
-        return ModelUtil.commitDefaultMOC()
-    }
 }

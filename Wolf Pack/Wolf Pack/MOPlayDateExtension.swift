@@ -17,8 +17,4 @@ extension MOPlayDate {
 
         return playDate
     }
-
-    func save() -> Bool {
-        return ModelUtil.commitDefaultMOC()
-    }
 }

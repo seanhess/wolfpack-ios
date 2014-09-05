@@ -20,11 +20,6 @@ extension MOUser: FromJSON, Fetchable {
         return user
     }
     
-//    func save() -> Bool {
-//        println("save \(self.firstName)")
-//        return ModelUtil.commitDefaultMOC()
-//    }
-    
     class func fetchOrCreate(id: String) -> MOUser {
         var maybeUser = self.fetch(id)
         if let user = maybeUser {
