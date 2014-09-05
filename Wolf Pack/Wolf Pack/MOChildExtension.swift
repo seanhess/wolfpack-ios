@@ -35,34 +35,15 @@ extension MOChild: Fetchable, FromJSON {
         return ModelUtil.fetch(NSPredicate(format: "id == %@", id))
     }
 
-    class func loadUsers() {
+    class func syncREST() {
         let url = NSURL(string: "http://wolfpack-api.herokuapp.com/children")
-        let request = NSURLRequest(URL: url)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, hasError) in
-
-            println("got Children")
-            if let error = hasError {
-                println("Error: \(error)")
-                return
-            }
-
-            let json = JSONValue(data)
-            switch json {
-                case .JArray(let jsonArray) where jsonArray.count > 0:
-                    for (index, jsonUser) in enumerate(jsonArray) {
-                        // here I have the json objects I need
-                        let id = jsonUser["_id"].string!
-                        
-                        var user = self.fetchOrCreate(id)
-                        user.updateFromJSON(jsonUser)
-                    }
-                
-                    ModelUtil.commitDefaultMOC()
-                
-                default:
-                    println("could not parse")
-            }
+        loadRESTObjects(url) { json in
+            // here I have the json objects I need
+            let id = json["_id"].string!
+            var child = self.fetchOrCreate(id)
+            child.updateFromJSON(json)
         }
+
     }
 
     class func entityName () -> String {

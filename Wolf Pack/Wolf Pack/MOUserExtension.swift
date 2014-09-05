@@ -37,40 +37,19 @@ extension MOUser: FromJSON, Fetchable {
     }
     
     // loads them into the data store
-    class func loadUsers() {
+    class func syncREST() {
         let url = NSURL(string: "http://wolfpack-api.herokuapp.com/users")
-        let request = NSURLRequest(URL: url)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, hasError) in
-
-            if let error = hasError {
-                println("Error: \(error)")
-                return
-            }
-
-            let json = JSONValue(data)
-            switch json {
-                case .JArray(let jsonArray) where jsonArray.count > 0:
-                    for (index, jsonUser) in enumerate(jsonArray) {
-                        // here I have the json objects I need
-                        let id = jsonUser["_id"].string!
-                        
-                        var user = self.fetchOrCreate(id)
-                        user.updateFromJSON(jsonUser)
-                    }
-                
-                    ModelUtil.commitDefaultMOC()
-                
-                default:
-                    println("could not parse")
-            }
+        loadRESTObjects(url) { json in
+            // here I have the json objects I need
+            let id = json["_id"].string!
+            var user = self.fetchOrCreate(id)
+            user.updateFromJSON(json)
         }
     }
     
     func updateFromJSON(json:JSONValue) {
         self.firstName = json["firstName"].string!
     }
-    
-    
     
     func imageUrl() -> NSURL {
         return NSURL(string:"http://www.hess-dietz.de/resources/Frau+Hess.JPG")

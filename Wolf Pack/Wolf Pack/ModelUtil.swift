@@ -45,3 +45,28 @@ class ModelUtil {
         return nil
     }
 }
+
+// loads them into the data store
+func loadRESTObjects(url:NSURL, process:(JSONValue) -> Void) {
+    let request = NSURLRequest(URL: url)
+    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, hasError) in
+        
+        if let error = hasError {
+            println("Error: \(error)")
+            return
+        }
+        
+        let json = JSONValue(data)
+        switch json {
+        case .JArray(let jsonArray) where jsonArray.count > 0:
+            for (index, jsonValue) in enumerate(jsonArray) {
+                process(jsonValue)
+            }
+            
+            ModelUtil.commitDefaultMOC()
+            
+        default:
+            println("could not parse")
+        }
+    }
+}
