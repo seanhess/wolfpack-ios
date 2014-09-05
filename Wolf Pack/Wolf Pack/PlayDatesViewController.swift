@@ -18,6 +18,8 @@ class PlayDatesViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: "PlayDate")
+        
+        MOUser.loadUsers()
     }
     
     override func didReceiveMemoryWarning() {

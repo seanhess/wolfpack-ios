@@ -24,6 +24,8 @@
 		786ABEB719B96FC9006EFA96 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEB619B96FC9006EFA96 /* MockData.swift */; };
 		786ABEBA19B9788C006EFA96 /* PlayDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */; };
 		786ABEBC19BA0E73006EFA96 /* PlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */; };
+		786ABEBE19BA2344006EFA96 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEBD19BA2344006EFA96 /* FromJSON.swift */; };
+		786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		786ABEB619B96FC9006EFA96 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayDatesViewController.swift; sourceTree = "<group>"; };
 		786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayDateViewController.swift; sourceTree = "<group>"; };
+		786ABEBD19BA2344006EFA96 /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSON.swift; sourceTree = "<group>"; };
+		786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				4AEBD6BC19BA005D007E714F /* MOUserExtension.swift */,
 				4ADAF5B619BA1FC100F81B39 /* MOPlayDateExtension.swift */,
 				4ADAF5C219BA25AA00F81B39 /* MOChildExtension.swift */,
+				786ABEBD19BA2344006EFA96 /* FromJSON.swift */,
 			);
 			name = MOExtensions;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				786ABE9A19B9685D006EFA96 /* ViewController.swift */,
 				786ABE9C19B9685D006EFA96 /* Main.storyboard */,
 				786ABE9F19B9685D006EFA96 /* Images.xcassets */,
+				786ABEBF19BA2800006EFA96 /* libs */,
 				786ABE9319B9685D006EFA96 /* Supporting Files */,
 			);
 			path = "Wolf Pack";
@@ -185,6 +191,14 @@
 				786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		786ABEBF19BA2800006EFA96 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +314,8 @@
 				4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */,
 				4AEBD6B919B977A4007E714F /* CoreDataModelManager.swift in Sources */,
 				786ABE9619B9685D006EFA96 /* AppDelegate.swift in Sources */,
+				786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */,
+				786ABEBE19BA2344006EFA96 /* FromJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
