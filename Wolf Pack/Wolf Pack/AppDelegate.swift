@@ -17,13 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
+        
+//        var user1 = MOUser.create("000002", phone: "8013588816", firstName: "Other", lastName: "Tester")
+//        user1.save()
+//
 //        var user = MOUser.create("000001", phone: "8012007345", firstName: "More", lastName: "Testing")
 //        user.firstName = "Changed First Name"
 //        user.save()
+////
+////        var playDate = MOPlayDate.create(NSDate(), location: "My House", owner: user)
+////        playDate.save()
 //        
-//        var playDate = MOPlayDate.create(NSDate(), location: "My House", owner: user)
-//        playDate.save()
+//        var child = MOChild.create("1234", firstName: "Child 1", lastName: "Last Name", parents: user,user1)
+//        child.save()
         
         return true
     }

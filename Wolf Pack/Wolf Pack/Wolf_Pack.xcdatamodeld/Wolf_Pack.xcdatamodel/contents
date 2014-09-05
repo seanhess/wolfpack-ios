@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.14" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Child" representedClassName="Wolf_Pack.MOChild" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="children" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="PlayDate" representedClassName="Wolf_Pack.MOPlayDate" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,11 +16,13 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="parents" inverseEntity="Child" syncable="YES"/>
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User" syncable="YES"/>
         <relationship name="playDates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlayDate" inverseName="owner" inverseEntity="PlayDate" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="133"/>
         <element name="PlayDate" positionX="-54" positionY="36" width="128" height="88"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Child" positionX="-45" positionY="45" width="128" height="103"/>
     </elements>
 </model>

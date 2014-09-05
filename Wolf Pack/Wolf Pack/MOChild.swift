@@ -1,5 +1,5 @@
 //
-//  MOUser.swift
+//  MOChild.swift
 //  Wolf Pack
 //
 //  Created by Matt Berteaux on 9/5/14.
@@ -9,14 +9,11 @@
 import Foundation
 import CoreData
 
-class MOUser: NSManagedObject {
+class MOChild: NSManagedObject {
 
-    @NSManaged var firstName: String
     @NSManaged var id: String
+    @NSManaged var firstName: String
     @NSManaged var lastName: String
-    @NSManaged var phone: String
-    @NSManaged var friends: NSSet
-    @NSManaged var playDates: NSSet
-    @NSManaged var children: MOChild
+    @NSManaged var parents: NSSet
 
 }
