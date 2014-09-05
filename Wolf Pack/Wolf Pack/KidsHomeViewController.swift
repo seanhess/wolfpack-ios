@@ -14,7 +14,7 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet var userHeadImageView:UIImageView!
     @IBOutlet var userLabel:UILabel!
     
-    let child = MOChild.create("henry", firstName: "asdf", lastName: "asdf", parents: nil)
+    let child = MOChild.create("henry", firstName: "asdf", lastName: "asdf")
     var me:MOUser!
     var testHead:KidHeadView?
     

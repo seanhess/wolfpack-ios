@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A9B6DC219BA6E19008D3863 /* MOChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B6DC119BA6E19008D3863 /* MOChild.swift */; };
 		4ADAF5B719BA1FC100F81B39 /* MOPlayDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5B619BA1FC100F81B39 /* MOPlayDateExtension.swift */; };
 		4ADAF5C319BA25AA00F81B39 /* MOChildExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5C219BA25AA00F81B39 /* MOChildExtension.swift */; };
 		4ADAF5CB19BA2F8300F81B39 /* MOInvitationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5CA19BA2F8300F81B39 /* MOInvitationExtension.swift */; };
-		4ADAF5CF19BA372300F81B39 /* MOChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5CE19BA372300F81B39 /* MOChild.swift */; };
 		4ADAF5D119BA372300F81B39 /* MOPlayDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5D019BA372300F81B39 /* MOPlayDate.swift */; };
 		4ADAF5D319BA372300F81B39 /* MOInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5D219BA372300F81B39 /* MOInvitation.swift */; };
 		4ADAF5D519BA372300F81B39 /* MOUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5D419BA372300F81B39 /* MOUser.swift */; };
@@ -49,10 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A9B6DC119BA6E19008D3863 /* MOChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOChild.swift; sourceTree = "<group>"; };
 		4ADAF5B619BA1FC100F81B39 /* MOPlayDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPlayDateExtension.swift; sourceTree = "<group>"; };
 		4ADAF5C219BA25AA00F81B39 /* MOChildExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOChildExtension.swift; sourceTree = "<group>"; };
 		4ADAF5CA19BA2F8300F81B39 /* MOInvitationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOInvitationExtension.swift; sourceTree = "<group>"; };
-		4ADAF5CE19BA372300F81B39 /* MOChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOChild.swift; sourceTree = "<group>"; };
 		4ADAF5D019BA372300F81B39 /* MOPlayDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPlayDate.swift; sourceTree = "<group>"; };
 		4ADAF5D219BA372300F81B39 /* MOInvitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOInvitation.swift; sourceTree = "<group>"; };
 		4ADAF5D419BA372300F81B39 /* MOUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUser.swift; sourceTree = "<group>"; };
@@ -121,10 +121,10 @@
 		4AEBD6B319B97414007E714F /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
+				4A9B6DC119BA6E19008D3863 /* MOChild.swift */,
 				4ADAF5D419BA372300F81B39 /* MOUser.swift */,
 				4ADAF5D219BA372300F81B39 /* MOInvitation.swift */,
 				4ADAF5D019BA372300F81B39 /* MOPlayDate.swift */,
-				4ADAF5CE19BA372300F81B39 /* MOChild.swift */,
 			);
 			name = "Managed Objects";
 			sourceTree = "<group>";
@@ -391,7 +391,6 @@
 				4ADAF5D319BA372300F81B39 /* MOInvitation.swift in Sources */,
 				4ADAF5B719BA1FC100F81B39 /* MOPlayDateExtension.swift in Sources */,
 				4ADAF5D519BA372300F81B39 /* MOUser.swift in Sources */,
-				4ADAF5CF19BA372300F81B39 /* MOChild.swift in Sources */,
 				786ABE9B19B9685D006EFA96 /* ViewController.swift in Sources */,
 				786ABEB719B96FC9006EFA96 /* MockData.swift in Sources */,
 				4AF5776519BA4D47006D2DDF /* Fetchable.swift in Sources */,
@@ -401,6 +400,7 @@
 				4ADAF5C319BA25AA00F81B39 /* MOChildExtension.swift in Sources */,
 				786ABEBA19B9788C006EFA96 /* PlayDatesViewController.swift in Sources */,
 				785E33F819BA427A003D7048 /* KidHeadView.swift in Sources */,
+				4A9B6DC219BA6E19008D3863 /* MOChild.swift in Sources */,
 				4AEBD6BB19B9E5DA007E714F /* ModelUtil.swift in Sources */,
 				4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */,
 				4AEBD6B919B977A4007E714F /* CoreDataModelManager.swift in Sources */,

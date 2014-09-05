@@ -5,7 +5,7 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="invitations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Invitation" inverseName="child" inverseEntity="Invitation" syncable="YES"/>
-        <relationship name="parents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="children" inverseEntity="User" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="children" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Invitation" representedClassName="Wolf_Pack.MOInvitation" syncable="YES">
         <attribute name="confirmationStatus" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,14 +23,14 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="parents" inverseEntity="Child" syncable="YES"/>
+        <relationship name="children" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="parent" inverseEntity="Child" syncable="YES"/>
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User" syncable="YES"/>
         <relationship name="playDates" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PlayDate" inverseName="owner" inverseEntity="PlayDate" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Child" positionX="-45" positionY="45" width="128" height="118"/>
+        <element name="Child" positionX="-45" positionY="45" width="128" height="120"/>
+        <element name="Invitation" positionX="-36" positionY="72" width="128" height="88"/>
         <element name="PlayDate" positionX="-54" positionY="36" width="128" height="103"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="Invitation" positionX="-36" positionY="72" width="128" height="88"/>
     </elements>
 </model>

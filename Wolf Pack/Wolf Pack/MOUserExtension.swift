@@ -23,12 +23,10 @@ extension MOUser: FromJSON, Fetchable {
     class func fetchOrCreate(id: String) -> MOUser {
         var maybeUser = self.fetch(id)
         if let user = maybeUser {
-            println("Found User \(id)")
             return user
         }
         else {
             // create a new one
-            println("Created User \(id)")
             let user = MOUser.create(id, phone: "", firstName: "", lastName: "")
             return user
         }
@@ -44,7 +42,6 @@ extension MOUser: FromJSON, Fetchable {
         let request = NSURLRequest(URL: url)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, hasError) in
 
-            println("got USERS")
             if let error = hasError {
                 println("Error: \(error)")
                 return
@@ -70,7 +67,6 @@ extension MOUser: FromJSON, Fetchable {
     }
     
     func updateFromJSON(json:JSONValue) {
-        println("update user \(self.id)")
         self.firstName = json["firstName"].string!
     }
     
