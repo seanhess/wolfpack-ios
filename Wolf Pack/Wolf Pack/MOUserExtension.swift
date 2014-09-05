@@ -20,10 +20,10 @@ extension MOUser: FromJSON {
         return user
     }
     
-    func save() -> Bool {
-        println("save \(self.firstName)")
-        return ModelUtil.commitDefaultMOC()
-    }
+//    func save() -> Bool {
+//        println("save \(self.firstName)")
+//        return ModelUtil.commitDefaultMOC()
+//    }
     
     class func fetchOrCreate(id: String) -> MOUser {
         var maybeUser = self.fetch(id)
@@ -77,8 +77,9 @@ extension MOUser: FromJSON {
                         
                         var user = self.fetchOrCreate(id)
                         user.updateFromJSON(jsonUser)
-                        user.save()
                     }
+                
+                    ModelUtil.commitDefaultMOC()
                 
                 default:
                     println("could not parse")
