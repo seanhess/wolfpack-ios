@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        var invite = MOInvitation.create(child, status: "Invited", playDate: playDate);
 //        invite.save()
         
+        MOUser.loadUsers()
+        
         return true
     }
 

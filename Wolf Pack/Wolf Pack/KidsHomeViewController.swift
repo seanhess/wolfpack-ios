@@ -8,14 +8,50 @@
 
 import UIKit
 
-class KidsHomeViewController : UIViewController {
+class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    @IBOutlet var userBackgroundImageView:UIImageView!
+    @IBOutlet var userHeadImageView:UIImageView!
+    @IBOutlet var userLabel:UILabel!
+    
+    let child = MOChild.create("henry", firstName: "asdf", lastName: "asdf", parents: nil)
+    var me:MOUser!
+    var testHead:KidHeadView?
+    
+    @IBOutlet var collectionView:UICollectionView!
+    
     override func viewDidLoad() {
-        let child = MOChild.create("henry", firstName: "asdf", lastName: "asdf", parents: nil)
+        super.viewDidLoad()
+        me = MOUser.me()
         
-        var testHead:KidHeadView = KidHeadView()
-        testHead.frame = CGRectMake(0, 200, 100, 100)
-        testHead.updateChild(child)
+        // BLURRRRY
+        var blurEffect = UIBlurEffect(style: .Light)
+        var blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = userBackgroundImageView.bounds
+        blurEffectView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
+        userBackgroundImageView.addSubview(blurEffectView)
+        userBackgroundImageView.sd_setImageWithURL(me.imageUrl())
         
-        view.addSubview(testHead)
+        userHeadImageView.sd_setImageWithURL(me.imageUrl())
+        
+        userLabel.text = me.fullName()
+        
+        // Hide navigation bar
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        var cell:UICollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("KidCollectionViewCell", forIndexPath: indexPath) as UICollectionViewCell
+        var headView = cell.contentView.subviews[0] as KidHeadView
+        headView.updateChild(child)
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
     }
 }

@@ -21,6 +21,10 @@
 		6898E2E64ECB416FBED9B3BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E5BBCC8074B6380BF3396 /* libPods.a */; };
 		785E33F819BA427A003D7048 /* KidHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F619BA427A003D7048 /* KidHeadView.swift */; };
 		785E33F919BA427A003D7048 /* KidsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F719BA427A003D7048 /* KidsHomeViewController.swift */; };
+		785E33FD19BA5DD2003D7048 /* woot.png in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FC19BA5DD2003D7048 /* woot.png */; };
+		785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */; };
+		785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */; };
+		785E340319BA6BCD003D7048 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E340219BA6BCC003D7048 /* CircleImageView.swift */; };
 		786ABE9619B9685D006EFA96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABE9519B9685D006EFA96 /* AppDelegate.swift */; };
 		786ABE9919B9685D006EFA96 /* Wolf_Pack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 786ABE9719B9685D006EFA96 /* Wolf_Pack.xcdatamodeld */; };
 		786ABE9B19B9685D006EFA96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABE9A19B9685D006EFA96 /* ViewController.swift */; };
@@ -59,6 +63,10 @@
 		4AF5776419BA4D47006D2DDF /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		785E33F619BA427A003D7048 /* KidHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidHeadView.swift; sourceTree = "<group>"; };
 		785E33F719BA427A003D7048 /* KidsHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsHomeViewController.swift; sourceTree = "<group>"; };
+		785E33FC19BA5DD2003D7048 /* woot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woot.png; sourceTree = "<group>"; };
+		785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		785E340219BA6BCC003D7048 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		786ABE9019B9685D006EFA96 /* Wolf Pack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wolf Pack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		786ABE9419B9685D006EFA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786ABE9519B9685D006EFA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +173,9 @@
 		786ABE9219B9685D006EFA96 /* Wolf Pack */ = {
 			isa = PBXGroup;
 			children = (
+				785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */,
+				785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */,
+				785E33FC19BA5DD2003D7048 /* woot.png */,
 				786ABEB819B97869006EFA96 /* Views */,
 				786ABEB519B96E96006EFA96 /* Data */,
 				4AEBD6B219B973A5007E714F /* Model */,
@@ -216,8 +227,9 @@
 			children = (
 				786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */,
 				786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */,
-				785E33F619BA427A003D7048 /* KidHeadView.swift */,
 				785E33F719BA427A003D7048 /* KidsHomeViewController.swift */,
+				785E33F619BA427A003D7048 /* KidHeadView.swift */,
+				785E340219BA6BCC003D7048 /* CircleImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -321,7 +333,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				786ABE9E19B9685D006EFA96 /* Main.storyboard in Resources */,
+				785E33FD19BA5DD2003D7048 /* woot.png in Resources */,
+				785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */,
 				786ABEA019B9685D006EFA96 /* Images.xcassets in Resources */,
+				785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785E340319BA6BCD003D7048 /* CircleImageView.swift in Sources */,
 				4ADAF5D319BA372300F81B39 /* MOInvitation.swift in Sources */,
 				4ADAF5B719BA1FC100F81B39 /* MOPlayDateExtension.swift in Sources */,
 				4ADAF5D519BA372300F81B39 /* MOUser.swift in Sources */,

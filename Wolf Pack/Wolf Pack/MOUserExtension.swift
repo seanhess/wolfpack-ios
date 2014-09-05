@@ -73,6 +73,20 @@ extension MOUser: FromJSON, Fetchable {
         println("update user \(self.id)")
         self.firstName = json["firstName"].string!
     }
+    
+    
+    
+    func imageUrl() -> NSURL {
+        return NSURL(string:"http://www.hess-dietz.de/resources/Frau+Hess.JPG")
+    }
+    
+    class func me() -> MOUser {
+        return self.fetchOrCreate("5409ef307f48400200582d9a")
+    }
+    
+    func fullName() -> String {
+        return firstName + " " + lastName
+    }
 
     class func entityName () -> String {
         return "User"
