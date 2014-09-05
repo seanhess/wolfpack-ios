@@ -44,14 +44,24 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
         
     }
     
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell:UICollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("KidCollectionViewCell", forIndexPath: indexPath) as UICollectionViewCell
-        var headView = cell.contentView.subviews[0] as KidHeadView
-        headView.updateChild(child)
-        return cell
+        if (indexPath.row == 4) {
+            var cell:UICollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("AddKidCell", forIndexPath: indexPath) as UICollectionViewCell
+            return cell
+        }
+        else {
+            var cell:UICollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("KidCollectionViewCell", forIndexPath: indexPath) as UICollectionViewCell
+            var headView = cell.contentView.subviews[0] as KidHeadView
+            headView.updateChild(child)
+            return cell
+        }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 4+1 // for the button
     }
 }

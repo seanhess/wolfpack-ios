@@ -25,6 +25,8 @@
 		785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */; };
 		785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */; };
 		785E340319BA6BCD003D7048 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E340219BA6BCC003D7048 /* CircleImageView.swift */; };
+		785E340619BA6F4E003D7048 /* red-plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785E340519BA6F4E003D7048 /* red-plus@2x.png */; };
+		785E340819BA6F73003D7048 /* red-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 785E340719BA6F73003D7048 /* red-plus.png */; };
 		786ABE9619B9685D006EFA96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABE9519B9685D006EFA96 /* AppDelegate.swift */; };
 		786ABE9919B9685D006EFA96 /* Wolf_Pack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 786ABE9719B9685D006EFA96 /* Wolf_Pack.xcdatamodeld */; };
 		786ABE9B19B9685D006EFA96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABE9A19B9685D006EFA96 /* ViewController.swift */; };
@@ -67,6 +69,8 @@
 		785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		785E340219BA6BCC003D7048 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		785E340519BA6F4E003D7048 /* red-plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-plus@2x.png"; sourceTree = "<group>"; };
+		785E340719BA6F73003D7048 /* red-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-plus.png"; sourceTree = "<group>"; };
 		786ABE9019B9685D006EFA96 /* Wolf Pack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wolf Pack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		786ABE9419B9685D006EFA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786ABE9519B9685D006EFA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,17 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		785E340419BA6F43003D7048 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */,
+				785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */,
+				785E340519BA6F4E003D7048 /* red-plus@2x.png */,
+				785E340719BA6F73003D7048 /* red-plus.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		786ABE8719B9685D006EFA96 = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +188,7 @@
 		786ABE9219B9685D006EFA96 /* Wolf Pack */ = {
 			isa = PBXGroup;
 			children = (
-				785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */,
-				785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */,
+				785E340419BA6F43003D7048 /* Resources */,
 				785E33FC19BA5DD2003D7048 /* woot.png */,
 				786ABEB819B97869006EFA96 /* Views */,
 				786ABEB519B96E96006EFA96 /* Data */,
@@ -333,8 +347,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				786ABE9E19B9685D006EFA96 /* Main.storyboard in Resources */,
+				785E340819BA6F73003D7048 /* red-plus.png in Resources */,
 				785E33FD19BA5DD2003D7048 /* woot.png in Resources */,
 				785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */,
+				785E340619BA6F4E003D7048 /* red-plus@2x.png in Resources */,
 				786ABEA019B9685D006EFA96 /* Images.xcassets in Resources */,
 				785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */,
 			);

@@ -15,18 +15,21 @@ import UIKit
 // 100x100
 
 class KidHeadView : UIView {
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder:aDecoder)
+        backgroundColor = UIColor.clearColor()
+    }
     
     // lazy image view
     lazy var imageView:UIImageView = {
         let view = UIImageView()
         view.frame = self.bounds
-        view.backgroundColor = UIColor.orangeColor()
+//        view.backgroundColor = UIColor.orangeColor()
         self.addSubview(view)
         println("hello bobby")
         return view
     }()
-    
-    
 
     var child:MOChild?
     
@@ -36,7 +39,7 @@ class KidHeadView : UIView {
         imageView.layer.cornerRadius = imageView.frame.size.height / 2
         imageView.layer.masksToBounds = true
         imageView.backgroundColor = UIColor.redColor()
-        self.backgroundColor = UIColor.blueColor()
+//        self.backgroundColor = UIColor.blueColor()
         let url = NSURL(string:"https://lh3.googleusercontent.com/-vpRiaN7tRHg/AAAAAAAAAAI/AAAAAAAAAAA/LiDbyWt1mUw/s128-c-k/photo.jpg")
         imageView.sd_setImageWithURL(url)
         
