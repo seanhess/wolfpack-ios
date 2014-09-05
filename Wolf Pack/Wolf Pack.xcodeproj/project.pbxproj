@@ -13,6 +13,9 @@
 		786ABE9E19B9685D006EFA96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 786ABE9C19B9685D006EFA96 /* Main.storyboard */; };
 		786ABEA019B9685D006EFA96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786ABE9F19B9685D006EFA96 /* Images.xcassets */; };
 		786ABEAC19B9685D006EFA96 /* Wolf_PackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEAB19B9685D006EFA96 /* Wolf_PackTests.swift */; };
+		786ABEB719B96FC9006EFA96 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEB619B96FC9006EFA96 /* MockData.swift */; };
+		786ABEBA19B9788C006EFA96 /* PlayDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */; };
+		786ABEBC19BA0E73006EFA96 /* PlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		786ABEA519B9685D006EFA96 /* Wolf PackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wolf PackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		786ABEAA19B9685D006EFA96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786ABEAB19B9685D006EFA96 /* Wolf_PackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wolf_PackTests.swift; sourceTree = "<group>"; };
+		786ABEB619B96FC9006EFA96 /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayDatesViewController.swift; sourceTree = "<group>"; };
+		786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayDateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,8 @@
 		786ABE9219B9685D006EFA96 /* Wolf Pack */ = {
 			isa = PBXGroup;
 			children = (
+				786ABEB819B97869006EFA96 /* Views */,
+				786ABEB519B96E96006EFA96 /* Data */,
 				786ABE9519B9685D006EFA96 /* AppDelegate.swift */,
 				786ABE9A19B9685D006EFA96 /* ViewController.swift */,
 				786ABE9C19B9685D006EFA96 /* Main.storyboard */,
@@ -110,6 +118,23 @@
 				786ABEAA19B9685D006EFA96 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		786ABEB519B96E96006EFA96 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				786ABEB619B96FC9006EFA96 /* MockData.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		786ABEB819B97869006EFA96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */,
+				786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +237,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				786ABE9B19B9685D006EFA96 /* ViewController.swift in Sources */,
+				786ABEB719B96FC9006EFA96 /* MockData.swift in Sources */,
+				786ABEBC19BA0E73006EFA96 /* PlayDateViewController.swift in Sources */,
 				786ABE9919B9685D006EFA96 /* Wolf_Pack.xcdatamodeld in Sources */,
+				786ABEBA19B9788C006EFA96 /* PlayDatesViewController.swift in Sources */,
 				786ABE9619B9685D006EFA96 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
