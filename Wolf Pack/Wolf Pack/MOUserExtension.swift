@@ -8,10 +8,10 @@
 
 import CoreData
 
-extension MOUser: FromJSON {
+extension MOUser: FromJSON, Fetchable {
 
     class func create(id: String, phone: String, firstName: String, lastName: String) -> MOUser {
-        var user = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: ModelUtil.defaultMOC) as MOUser
+        var user = NSEntityDescription.insertNewObjectForEntityForName(MOUser.entityName(), inManagedObjectContext: ModelUtil.defaultMOC) as MOUser
         user.phone = phone
         user.firstName = firstName
         user.id = id
@@ -40,20 +40,7 @@ extension MOUser: FromJSON {
     }
     
     class func fetch(id:String) -> MOUser? {
-        var error:NSError?
-        var predicate = NSPredicate(format: "id == %@", id)
-        var request = NSFetchRequest()
-        request.entity = NSEntityDescription.entityForName("User", inManagedObjectContext: ModelUtil.defaultMOC)
-        request.predicate = predicate
-        let maybeResults = ModelUtil.defaultMOC.executeFetchRequest(request, error:&error)
-        
-        if let results = maybeResults {
-            if results.count > 0 {
-                return (results[0] as MOUser)
-            }
-        }
-        
-        return nil
+        return ModelUtil.fetch(NSPredicate(format: "id == %@", id))
     }
     
     // loads them into the data store
@@ -90,5 +77,9 @@ extension MOUser: FromJSON {
     func updateFromJSON(json:JSONValue) {
         println("update user \(self.id)")
         self.firstName = json["firstName"].string!
+    }
+
+    class func entityName () -> String {
+        return "User"
     }
 }

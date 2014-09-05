@@ -17,6 +17,7 @@
 		4AEBD6B919B977A4007E714F /* CoreDataModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBD6B819B977A4007E714F /* CoreDataModelManager.swift */; };
 		4AEBD6BB19B9E5DA007E714F /* ModelUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBD6BA19B9E5DA007E714F /* ModelUtil.swift */; };
 		4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBD6BC19BA005D007E714F /* MOUserExtension.swift */; };
+		4AF5776519BA4D47006D2DDF /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF5776419BA4D47006D2DDF /* Fetchable.swift */; };
 		6898E2E64ECB416FBED9B3BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E5BBCC8074B6380BF3396 /* libPods.a */; };
 		785E33F819BA427A003D7048 /* KidHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F619BA427A003D7048 /* KidHeadView.swift */; };
 		785E33F919BA427A003D7048 /* KidsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F719BA427A003D7048 /* KidsHomeViewController.swift */; };
@@ -55,6 +56,7 @@
 		4AEBD6B819B977A4007E714F /* CoreDataModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModelManager.swift; sourceTree = "<group>"; };
 		4AEBD6BA19B9E5DA007E714F /* ModelUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUtil.swift; sourceTree = "<group>"; };
 		4AEBD6BC19BA005D007E714F /* MOUserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUserExtension.swift; sourceTree = "<group>"; };
+		4AF5776419BA4D47006D2DDF /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		785E33F619BA427A003D7048 /* KidHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidHeadView.swift; sourceTree = "<group>"; };
 		785E33F719BA427A003D7048 /* KidsHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsHomeViewController.swift; sourceTree = "<group>"; };
 		786ABE9019B9685D006EFA96 /* Wolf Pack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wolf Pack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 		4AEBD6B219B973A5007E714F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4AF5776119BA4BFB006D2DDF /* Protocols */,
 				4AEBD6B719B9764F007E714F /* MOExtensions */,
 				4AEBD6B319B97414007E714F /* Managed Objects */,
 				786ABE9719B9685D006EFA96 /* Wolf_Pack.xcdatamodeld */,
@@ -124,10 +127,18 @@
 				4AEBD6BC19BA005D007E714F /* MOUserExtension.swift */,
 				4ADAF5B619BA1FC100F81B39 /* MOPlayDateExtension.swift */,
 				4ADAF5C219BA25AA00F81B39 /* MOChildExtension.swift */,
-				786ABEBD19BA2344006EFA96 /* FromJSON.swift */,
 				4ADAF5CA19BA2F8300F81B39 /* MOInvitationExtension.swift */,
 			);
 			name = MOExtensions;
+			sourceTree = "<group>";
+		};
+		4AF5776119BA4BFB006D2DDF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				786ABEBD19BA2344006EFA96 /* FromJSON.swift */,
+				4AF5776419BA4D47006D2DDF /* Fetchable.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		786ABE8719B9685D006EFA96 = {
@@ -367,6 +378,7 @@
 				4ADAF5CF19BA372300F81B39 /* MOChild.swift in Sources */,
 				786ABE9B19B9685D006EFA96 /* ViewController.swift in Sources */,
 				786ABEB719B96FC9006EFA96 /* MockData.swift in Sources */,
+				4AF5776519BA4D47006D2DDF /* Fetchable.swift in Sources */,
 				786ABEBC19BA0E73006EFA96 /* PlayDateViewController.swift in Sources */,
 				4ADAF5CB19BA2F8300F81B39 /* MOInvitationExtension.swift in Sources */,
 				786ABE9919B9685D006EFA96 /* Wolf_Pack.xcdatamodeld in Sources */,

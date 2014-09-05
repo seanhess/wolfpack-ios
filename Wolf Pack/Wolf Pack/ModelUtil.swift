@@ -28,4 +28,20 @@ class ModelUtil {
         let moc = ModelUtil.defaultMOC
         moc.deleteObject(managedObject)
     }
+    
+    class func fetch<T: Fetchable>(predicate: NSPredicate) -> T? {
+        var error:NSError?
+        var request = NSFetchRequest()
+        request.entity = NSEntityDescription.entityForName(T.entityName(), inManagedObjectContext: ModelUtil.defaultMOC)
+        request.predicate = predicate
+        let maybeResults = ModelUtil.defaultMOC.executeFetchRequest(request, error:&error)
+
+        if let results = maybeResults {
+            if results.count > 0 {
+                return (results[0] as T)
+            }
+        }
+        
+        return nil
+    }
 }
