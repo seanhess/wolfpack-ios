@@ -9,5 +9,6 @@
 import Foundation
 
 protocol Fetchable {
+    var id:String {get set}
     class func entityName() -> String
 }
