@@ -18,8 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        var user = MOUser.create("000001", phone: "8012007345", firstName: "More", lastName: "Testing")
-        user.save()
+//        var user = MOUser.create("000001", phone: "8012007345", firstName: "More", lastName: "Testing")
+//        user.firstName = "Changed First Name"
+//        user.save()
+//        
+//        var playDate = MOPlayDate.create(NSDate(), location: "My House", owner: user)
+//        playDate.save()
         
         return true
     }
