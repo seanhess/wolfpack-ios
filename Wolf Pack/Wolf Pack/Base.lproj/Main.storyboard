@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="bER-VX-1Ya" kind="relationship" relationship="rootViewController" id="wnr-0V-PNW"/>
+                        <segue destination="MQR-8R-KKj" kind="relationship" relationship="rootViewController" id="hzl-cm-MAq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVO-et-Yh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,6 +67,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPY-pk-84b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="-460"/>
+        </scene>
+        <!--Kids-->
+        <scene sceneID="bWU-L4-FOU">
+            <objects>
+                <viewController title="Kids" id="MQR-8R-KKj" customClass="KidsHomeViewController" customModule="Wolf_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PMr-dm-d9t"/>
+                        <viewControllerLayoutGuide type="bottom" id="fpG-tX-Tpd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7o5-dL-0Xr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kids" id="Kab-sE-Fpx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znD-aK-XOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="200"/>
         </scene>
         <!--Testing-->
         <scene sceneID="To2-dg-UU7">

@@ -9,13 +9,16 @@
 import CoreData
 
 extension MOChild {
-    class func create(id: String, firstName: String, lastName: String, parents: MOUser...) -> MOChild {
+    class func create(id: String, firstName: String, lastName: String, parents: MOUser?...) -> MOChild {
         var child = NSEntityDescription.insertNewObjectForEntityForName("Child", inManagedObjectContext: ModelUtil.defaultMOC) as MOChild
         
         child.id = id
         child.firstName = firstName
         child.lastName = lastName
-        child.parents = NSSet(array: parents)
+        
+//        if let parentsValue = parents {
+//            child.parents = NSSet(array: parentsValue)
+//        }
 
         return child
     }
