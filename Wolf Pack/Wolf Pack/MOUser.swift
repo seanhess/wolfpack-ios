@@ -15,8 +15,8 @@ class MOUser: NSManagedObject {
     @NSManaged var id: String
     @NSManaged var lastName: String
     @NSManaged var phone: String
+    @NSManaged var children: MOChild
     @NSManaged var friends: NSSet
     @NSManaged var playDates: NSSet
-    @NSManaged var children: MOChild
 
 }

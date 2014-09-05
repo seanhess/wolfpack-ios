@@ -14,5 +14,6 @@ class MOPlayDate: NSManagedObject {
     @NSManaged var date: NSDate
     @NSManaged var location: String
     @NSManaged var owner: MOUser
+    @NSManaged var invitations: NSSet
 
 }

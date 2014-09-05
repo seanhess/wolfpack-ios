@@ -11,9 +11,10 @@ import CoreData
 
 class MOChild: NSManagedObject {
 
-    @NSManaged var id: String
     @NSManaged var firstName: String
+    @NSManaged var id: String
     @NSManaged var lastName: String
     @NSManaged var parents: NSSet
+    @NSManaged var invitations: NSSet
 
 }

@@ -24,12 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        var user = MOUser.create("000001", phone: "8012007345", firstName: "More", lastName: "Testing")
 //        user.firstName = "Changed First Name"
 //        user.save()
-////
-////        var playDate = MOPlayDate.create(NSDate(), location: "My House", owner: user)
-////        playDate.save()
+//
+//        var playDate = MOPlayDate.create(NSDate(), location: "My House", owner: user)
+//        playDate.save()
 //        
 //        var child = MOChild.create("1234", firstName: "Child 1", lastName: "Last Name", parents: user,user1)
 //        child.save()
+//        
+//        var invite = MOInvitation.create(child, status: "Invited", playDate: playDate);
+//        invite.save()
         
         return true
     }

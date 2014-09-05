@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4ADAF5B719BA1FC100F81B39 /* MOPlayDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5B619BA1FC100F81B39 /* MOPlayDateExtension.swift */; };
-		4ADAF5BD19BA257800F81B39 /* MOChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5BC19BA257800F81B39 /* MOChild.swift */; };
-		4ADAF5BF19BA257800F81B39 /* MOPlayDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5BE19BA257800F81B39 /* MOPlayDate.swift */; };
-		4ADAF5C119BA257800F81B39 /* MOUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5C019BA257800F81B39 /* MOUser.swift */; };
 		4ADAF5C319BA25AA00F81B39 /* MOChildExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5C219BA25AA00F81B39 /* MOChildExtension.swift */; };
+		4ADAF5CB19BA2F8300F81B39 /* MOInvitationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5CA19BA2F8300F81B39 /* MOInvitationExtension.swift */; };
+		4ADAF5CF19BA372300F81B39 /* MOChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5CE19BA372300F81B39 /* MOChild.swift */; };
+		4ADAF5D119BA372300F81B39 /* MOPlayDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5D019BA372300F81B39 /* MOPlayDate.swift */; };
+		4ADAF5D319BA372300F81B39 /* MOInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5D219BA372300F81B39 /* MOInvitation.swift */; };
+		4ADAF5D519BA372300F81B39 /* MOUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF5D419BA372300F81B39 /* MOUser.swift */; };
 		4AEBD6B919B977A4007E714F /* CoreDataModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBD6B819B977A4007E714F /* CoreDataModelManager.swift */; };
 		4AEBD6BB19B9E5DA007E714F /* ModelUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBD6BA19B9E5DA007E714F /* ModelUtil.swift */; };
 		4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBD6BC19BA005D007E714F /* MOUserExtension.swift */; };
@@ -40,10 +42,12 @@
 
 /* Begin PBXFileReference section */
 		4ADAF5B619BA1FC100F81B39 /* MOPlayDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPlayDateExtension.swift; sourceTree = "<group>"; };
-		4ADAF5BC19BA257800F81B39 /* MOChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOChild.swift; sourceTree = "<group>"; };
-		4ADAF5BE19BA257800F81B39 /* MOPlayDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPlayDate.swift; sourceTree = "<group>"; };
-		4ADAF5C019BA257800F81B39 /* MOUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUser.swift; sourceTree = "<group>"; };
 		4ADAF5C219BA25AA00F81B39 /* MOChildExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOChildExtension.swift; sourceTree = "<group>"; };
+		4ADAF5CA19BA2F8300F81B39 /* MOInvitationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOInvitationExtension.swift; sourceTree = "<group>"; };
+		4ADAF5CE19BA372300F81B39 /* MOChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOChild.swift; sourceTree = "<group>"; };
+		4ADAF5D019BA372300F81B39 /* MOPlayDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOPlayDate.swift; sourceTree = "<group>"; };
+		4ADAF5D219BA372300F81B39 /* MOInvitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOInvitation.swift; sourceTree = "<group>"; };
+		4ADAF5D419BA372300F81B39 /* MOUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUser.swift; sourceTree = "<group>"; };
 		4AEBD6B419B9750E007E714F /* Wolf Pack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wolf Pack-Bridging-Header.h"; sourceTree = "<group>"; };
 		4AEBD6B819B977A4007E714F /* CoreDataModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModelManager.swift; sourceTree = "<group>"; };
 		4AEBD6BA19B9E5DA007E714F /* ModelUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUtil.swift; sourceTree = "<group>"; };
@@ -98,9 +102,10 @@
 		4AEBD6B319B97414007E714F /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				4ADAF5C019BA257800F81B39 /* MOUser.swift */,
-				4ADAF5BE19BA257800F81B39 /* MOPlayDate.swift */,
-				4ADAF5BC19BA257800F81B39 /* MOChild.swift */,
+				4ADAF5D419BA372300F81B39 /* MOUser.swift */,
+				4ADAF5D219BA372300F81B39 /* MOInvitation.swift */,
+				4ADAF5D019BA372300F81B39 /* MOPlayDate.swift */,
+				4ADAF5CE19BA372300F81B39 /* MOChild.swift */,
 			);
 			name = "Managed Objects";
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 				4ADAF5B619BA1FC100F81B39 /* MOPlayDateExtension.swift */,
 				4ADAF5C219BA25AA00F81B39 /* MOChildExtension.swift */,
 				786ABEBD19BA2344006EFA96 /* FromJSON.swift */,
+				4ADAF5CA19BA2F8300F81B39 /* MOInvitationExtension.swift */,
 			);
 			name = MOExtensions;
 			sourceTree = "<group>";
@@ -300,22 +306,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADAF5BD19BA257800F81B39 /* MOChild.swift in Sources */,
+				4ADAF5D319BA372300F81B39 /* MOInvitation.swift in Sources */,
 				4ADAF5B719BA1FC100F81B39 /* MOPlayDateExtension.swift in Sources */,
+				4ADAF5D519BA372300F81B39 /* MOUser.swift in Sources */,
+				4ADAF5CF19BA372300F81B39 /* MOChild.swift in Sources */,
 				786ABE9B19B9685D006EFA96 /* ViewController.swift in Sources */,
 				786ABEB719B96FC9006EFA96 /* MockData.swift in Sources */,
 				786ABEBC19BA0E73006EFA96 /* PlayDateViewController.swift in Sources */,
+				4ADAF5CB19BA2F8300F81B39 /* MOInvitationExtension.swift in Sources */,
 				786ABE9919B9685D006EFA96 /* Wolf_Pack.xcdatamodeld in Sources */,
 				4ADAF5C319BA25AA00F81B39 /* MOChildExtension.swift in Sources */,
 				786ABEBA19B9788C006EFA96 /* PlayDatesViewController.swift in Sources */,
-				4ADAF5C119BA257800F81B39 /* MOUser.swift in Sources */,
-				4ADAF5BF19BA257800F81B39 /* MOPlayDate.swift in Sources */,
 				4AEBD6BB19B9E5DA007E714F /* ModelUtil.swift in Sources */,
 				4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */,
 				4AEBD6B919B977A4007E714F /* CoreDataModelManager.swift in Sources */,
 				786ABE9619B9685D006EFA96 /* AppDelegate.swift in Sources */,
 				786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */,
 				786ABEBE19BA2344006EFA96 /* FromJSON.swift in Sources */,
+				4ADAF5D119BA372300F81B39 /* MOPlayDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
