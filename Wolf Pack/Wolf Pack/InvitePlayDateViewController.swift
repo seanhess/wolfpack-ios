@@ -8,16 +8,18 @@
 
 import Foundation
 
-class InvitePlayDateViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate {
+class InvitePlayDateViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate, iCarouselDataSource, iCarouselDelegate {
     
     @IBOutlet var myKidsImageView:UIImageView!
     @IBOutlet var collectionView:UICollectionView!
     
     @IBOutlet weak var whereButton: UIButton!
     @IBOutlet weak var whenButton: UIButton!
+    @IBOutlet weak var carousel:iCarousel!
     
     var invitations:[InvitationStatus] = []
     var myKids:[MOChild] = []
+    var reallyInvited:[InvitationStatus] = []
     
     var me:MOUser!
     
@@ -37,7 +39,8 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         var request = MOChild.otherChildrenRequest(me.id)
         let result = ModelUtil.execute(request) as [MOChild]
         invitations = result.map({(child) in InvitationStatus(child: child, invited:false, accepted:false)})
-        collectionView.reloadData()
+        reallyInvited = []
+//        collectionView.reloadData()
         
         let blue = UIColor(red: 0.10, green: 0.33, blue: 1.0, alpha: 1.0)
         whereButton.layer.borderColor = blue.CGColor
@@ -46,7 +49,67 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         whenButton.layer.borderColor = blue.CGColor
         whenButton.layer.borderWidth = 2
         whenButton.setTitleColor(blue, forState: UIControlState.Normal)
+        
+        carousel.type = iCarouselType.Wheel
+        carousel.vertical = false
+        carousel.delegate = self
+        carousel.dataSource = self
+        carousel.reloadData()
     }
+    
+    
+    /// CAROUSEL
+    
+    func carousel(carousel: iCarousel!, didSelectItemAtIndex index: Int) {
+        var status = invitations[index]
+        status.invited = !status.invited
+        reallyInvited = reallyInvitedFilter()
+        carousel.reloadData()
+        collectionView.reloadData()
+    }
+    
+    func carousel(carousel: iCarousel, viewForItemAtIndex index: Int, reusingView: UIView?) -> UIView {
+        var cell:ChildHeadCell
+        
+        if let value = reusingView {
+            cell = value as ChildHeadCell
+        }
+        else {
+            cell = ChildHeadCell(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        }
+        
+        var status = invitations[index]
+        cell.setData(status.child, selected:status.invited)
+
+        return cell;
+    }
+    
+    func numberOfItemsInCarousel(carousel: iCarousel!) -> Int {
+        return invitations.count
+    }
+    
+    func carousel(carousel: iCarousel!, valueForOption option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
+        switch option {
+            
+        case .VisibleItems:
+            return 5
+            
+        case .Radius:
+            return 130
+
+        case .Angle:
+            return (CGFloat(M_PI) / 5)
+            
+        default:
+            return value
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     /// TABLE VIEW
     
@@ -56,27 +119,26 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell:ChildHeadCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("ChildHeadCell", forIndexPath: indexPath) as ChildHeadCell
-        var status = invitations[indexPath.row]
+        var status = reallyInvited[indexPath.row]
         cell.setData(status.child, selected:status.invited)
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return invitations.count
+        return reallyInvited.count
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var status = invitations[indexPath.row]
-        status.invited = !status.invited
-        collectionView.reloadData()
-    }
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        var status = invitations[indexPath.row]
+//        status.invited = !status.invited
+//        collectionView.reloadData()
+//    }
 
     @IBAction func sendInvite(sender: AnyObject) {
         var playDate = MOPlayDate.create(NSDate(), location:"", owner: me)
 
-        var otherInvitations = invitations.filter({ (status) in
-            return status.invited
-        }).map({(status) in
+        var otherInvitations = reallyInvitedFilter()
+        .map({(status) in
             return MOInvitation.create(status.child, status: MOInvitationStatusInvited, playDate: playDate)
         }) as [MOInvitation]
         
@@ -94,6 +156,12 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
             return
         }))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func reallyInvitedFilter() -> [InvitationStatus] {
+        return invitations.filter({ (status) in
+            return status.invited
+        })
     }
     
     @IBAction func close(sender: AnyObject) {

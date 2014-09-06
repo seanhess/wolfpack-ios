@@ -47,6 +47,9 @@
 		7894841919BB79C000211104 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841819BB79C000211104 /* check@2x.png */; };
 		7894841B19BB79DB00211104 /* menu-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841A19BB79DB00211104 /* menu-blue@2x.png */; };
 		7894841D19BB79E200211104 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841C19BB79E200211104 /* menu@2x.png */; };
+		7894842219BB843B00211104 /* AWCollectionViewDialLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894842119BB843B00211104 /* AWCollectionViewDialLayout.m */; };
+		7894842719BB8A1400211104 /* WolfPawLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894842619BB8A1400211104 /* WolfPawLayout.swift */; };
+		7894842B19BB925E00211104 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894842A19BB925E00211104 /* iCarousel.m */; };
 		DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */; };
 		DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683419BB11FA007B1C02 /* MessagesViewController.swift */; };
 		DA50683719BB12D4007B1C02 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */; };
@@ -107,6 +110,11 @@
 		7894841819BB79C000211104 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		7894841A19BB79DB00211104 /* menu-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-blue@2x.png"; sourceTree = "<group>"; };
 		7894841C19BB79E200211104 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		7894842019BB843B00211104 /* AWCollectionViewDialLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWCollectionViewDialLayout.h; sourceTree = "<group>"; };
+		7894842119BB843B00211104 /* AWCollectionViewDialLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWCollectionViewDialLayout.m; sourceTree = "<group>"; };
+		7894842619BB8A1400211104 /* WolfPawLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WolfPawLayout.swift; sourceTree = "<group>"; };
+		7894842919BB925E00211104 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = iCarousel/iCarousel.h; sourceTree = "<group>"; };
+		7894842A19BB925E00211104 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = iCarousel/iCarousel.m; sourceTree = "<group>"; };
 		91BE4421C2E84CE8A6264197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B39E5BBCC8074B6380BF3396 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayDateViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +290,8 @@
 		786ABEBF19BA2800006EFA96 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				7894842919BB925E00211104 /* iCarousel.h */,
+				7894842A19BB925E00211104 /* iCarousel.m */,
 				786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */,
 			);
 			name = libs;
@@ -312,6 +322,9 @@
 			children = (
 				7894840919BB500D00211104 /* InvitePlayDateViewController.swift */,
 				7894840719BB4DF000211104 /* InvitePlayDate.storyboard */,
+				7894842619BB8A1400211104 /* WolfPawLayout.swift */,
+				7894842019BB843B00211104 /* AWCollectionViewDialLayout.h */,
+				7894842119BB843B00211104 /* AWCollectionViewDialLayout.m */,
 			);
 			name = "Invite Play Date";
 			sourceTree = "<group>";
@@ -477,6 +490,8 @@
 				4ADAF5B719BA1FC100F81B39 /* MOPlayDateExtension.swift in Sources */,
 				4ADAF5D519BA372300F81B39 /* MOUser.swift in Sources */,
 				786ABE9B19B9685D006EFA96 /* ViewController.swift in Sources */,
+				7894842219BB843B00211104 /* AWCollectionViewDialLayout.m in Sources */,
+				7894842B19BB925E00211104 /* iCarousel.m in Sources */,
 				786ABEB719B96FC9006EFA96 /* MockData.swift in Sources */,
 				4AF5776519BA4D47006D2DDF /* Fetchable.swift in Sources */,
 				4ADAF5CB19BA2F8300F81B39 /* MOInvitationExtension.swift in Sources */,
@@ -484,6 +499,7 @@
 				4ADAF5C319BA25AA00F81B39 /* MOChildExtension.swift in Sources */,
 				785E33F819BA427A003D7048 /* ChildHeadCell.swift in Sources */,
 				7894840619BAA9F000211104 /* InvitationStatus.swift in Sources */,
+				7894842719BB8A1400211104 /* WolfPawLayout.swift in Sources */,
 				4A9B6DC219BA6E19008D3863 /* MOChild.swift in Sources */,
 				DA50683719BB12D4007B1C02 /* ComposeMessageViewController.swift in Sources */,
 				DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */,

@@ -21,15 +21,14 @@ class ChildHeadCell : UICollectionViewCell {
     var nameLabel:UILabel!
     
     var child:MOChild?
-
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+    
+    func configure() {
         self.backgroundColor = UIColor.clearColor()
         self.clipsToBounds = false
         
         checkView = UIImageView(image: UIImage(named: "check.png"))
         checkView.frame = CGRectMake(self.bounds.size.width-24, self.bounds.size.width-24, 26, 26)
-
+        
         imageView = UIImageView(frame: self.bounds)
         imageView.layer.cornerRadius = imageView.frame.size.height / 2
         imageView.layer.masksToBounds = true
@@ -43,6 +42,16 @@ class ChildHeadCell : UICollectionViewCell {
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(checkView)
         self.contentView.addSubview(nameLabel)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder:aDecoder)
+        configure()
     }
 
     func setData(child:MOChild, selected:Bool) {
