@@ -39,7 +39,7 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         println("viewWillAppear reload")
         collectionView.reloadData()
         
-        createButton.hidden = kidsInvited().count == 0
+
     }
     
     override func viewDidLoad() {
@@ -47,7 +47,6 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         
         self.collectionView.allowsMultipleSelection = true
         self.viewButton.hidden = true
-        self.createButton.hidden = true
         
         me = MOUser.me()
         
@@ -61,6 +60,20 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         
         userHeadImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
         userLabel.text = me.firstName
+    }
+    
+    func createButtonHidden(value:Bool, animated:Bool) {
+        var frame = createButton.frame
+        if (value) {
+            frame.origin.y = view.frame.size.height
+        }
+        else {
+            frame.origin.y = view.frame.size.height - frame.size.height
+        }
+
+        UIView.animateWithDuration(0.5, animations: {
+            self.createButton.frame = frame
+        }, completion: nil)
     }
     
 //    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
@@ -126,7 +139,7 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         var status = myKidsInvitations[indexPath.row]
         status.invited = !status.invited
         status.delegate?.didUpdateStatus()
-        createButton.hidden = kidsInvited().count == 0
+        createButtonHidden(kidsInvited().count == 0, animated:true)
         println("selected \(status.invited)")
     }
     

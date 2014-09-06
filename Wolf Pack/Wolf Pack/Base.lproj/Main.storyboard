@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnR-wo-JLU">
-                                <rect key="frame" x="0.0" y="509" width="320" height="59"/>
+                                <rect key="frame" x="0.0" y="568" width="320" height="59"/>
                                 <color key="backgroundColor" red="0.13333334028720856" green="0.75294125080108643" blue="0.39215689897537231" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
                                 <state key="normal" title="CREATE PLAYDATE">

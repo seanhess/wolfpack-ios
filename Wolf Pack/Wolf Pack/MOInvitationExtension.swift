@@ -50,10 +50,11 @@ extension MOInvitation: ToJSON {
 
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, hasError) in
             println(response)
-            let json = JSONValue(data)
-            var id = json["_id"].string!
-            self.id = id
-            ModelUtil.commitDefaultMOC()
+            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+//            let json = JSONValue(data)
+//            var id = json["_id"].string!
+//            self.id = id
+//            ModelUtil.commitDefaultMOC()
         }
     }
 
