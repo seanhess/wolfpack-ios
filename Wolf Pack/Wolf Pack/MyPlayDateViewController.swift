@@ -18,13 +18,15 @@ class MyPlayDateViewController: UIViewController {
     
     var playDate:MOPlayDate!
     var invitations:[MOInvitation] = []
-    
     var me:MOUser!
+    
+    var isOwner:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         me = MOUser.me()
+        isOwner = me == playDate.owner
         userBackgroundImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
         userHeadImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
         userLabel.text = me.firstName

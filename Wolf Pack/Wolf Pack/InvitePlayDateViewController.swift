@@ -8,7 +8,7 @@
 
 import Foundation
 
-class InvitePlayDateViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class InvitePlayDateViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIAlertViewDelegate {
     
     @IBOutlet var myKidsImageView:UIImageView!
     @IBOutlet var collectionView:UICollectionView!
@@ -75,15 +75,14 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         
         var allInvitations = otherInvitations + kidInvitations
         
-        println("CREATED")
         ModelUtil.commitDefaultMOC()
-        
-        let sb = UIStoryboard(name: "MyPlayDate", bundle: nil)
-        let vc = sb.instantiateInitialViewController() as MyPlayDateViewController
-        vc.playDate = playDate
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        // now POST it. wheeeee
+
+        var alert = UIAlertController(title: "Good Job", message: "Playdate invite was sent.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Return to Home", style: UIAlertActionStyle.Default, handler: {(action) in
+            self.navigationController?.popViewControllerAnimated(true)
+            return
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func close(sender: AnyObject) {
