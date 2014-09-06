@@ -40,6 +40,7 @@
 		7894840819BB4DF000211104 /* InvitePlayDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7894840719BB4DF000211104 /* InvitePlayDate.storyboard */; };
 		7894840A19BB500D00211104 /* InvitePlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894840919BB500D00211104 /* InvitePlayDateViewController.swift */; };
 		7894840C19BB625100211104 /* MyPlayDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7894840B19BB625100211104 /* MyPlayDate.storyboard */; };
+		7894841119BB70F900211104 /* BlurryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894841019BB70F900211104 /* BlurryImageView.swift */; };
 		DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */; };
 		DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683419BB11FA007B1C02 /* MessagesViewController.swift */; };
 		DA50683719BB12D4007B1C02 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */; };
@@ -93,6 +94,7 @@
 		7894840719BB4DF000211104 /* InvitePlayDate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InvitePlayDate.storyboard; sourceTree = "<group>"; };
 		7894840919BB500D00211104 /* InvitePlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitePlayDateViewController.swift; sourceTree = "<group>"; };
 		7894840B19BB625100211104 /* MyPlayDate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPlayDate.storyboard; sourceTree = "<group>"; };
+		7894841019BB70F900211104 /* BlurryImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurryImageView.swift; sourceTree = "<group>"; };
 		91BE4421C2E84CE8A6264197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B39E5BBCC8074B6380BF3396 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayDateViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				7894840F19BB633F00211104 /* Invite Play Date */,
 				785E33F619BA427A003D7048 /* ChildHeadCell.swift */,
 				785E340219BA6BCC003D7048 /* CircleImageView.swift */,
+				7894841019BB70F900211104 /* BlurryImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -278,10 +281,10 @@
 		7894840E19BB633500211104 /* My Play Date */ = {
 			isa = PBXGroup;
 			children = (
-				DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */,
-				DA50683419BB11FA007B1C02 /* MessagesViewController.swift */,
 				DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */,
 				7894840B19BB625100211104 /* MyPlayDate.storyboard */,
+				DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */,
+				DA50683419BB11FA007B1C02 /* MessagesViewController.swift */,
 			);
 			name = "My Play Date";
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7894841119BB70F900211104 /* BlurryImageView.swift in Sources */,
 				785E340319BA6BCD003D7048 /* CircleImageView.swift in Sources */,
 				4ADAF5D319BA372300F81B39 /* MOInvitation.swift in Sources */,
 				4ADAF5B719BA1FC100F81B39 /* MOPlayDateExtension.swift in Sources */,

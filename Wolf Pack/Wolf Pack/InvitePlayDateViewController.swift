@@ -70,7 +70,7 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         }) as [MOInvitation]
         
         var kidInvitations = myKids.map({ (child) in
-            return MOInvitation.create(child, status: MOInvitationStatusAccepted, playDate: playDate)
+            return MOInvitation.create(child, status: MOInvitationStatusArrived, playDate: playDate)
         }) as [MOInvitation]
         
         var allInvitations = otherInvitations + kidInvitations

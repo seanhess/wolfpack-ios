@@ -10,16 +10,27 @@ import UIKit
 import CoreData
 
 class MyPlayDateViewController: UIViewController {
+    
     @IBOutlet var userBackgroundImageView:UIImageView!
     @IBOutlet var userHeadImageView:UIImageView!
     @IBOutlet var userLabel:UILabel!
+    @IBOutlet var collectionView:UICollectionView!
     
     var playDate:MOPlayDate!
+    var invitations:[MOInvitation] = []
     
     var me:MOUser!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        me = MOUser.me()
+        userBackgroundImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
+        userHeadImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
+        userLabel.text = me.firstName
+        
+        invitations = playDate.invitations.allObjects as [MOInvitation]
+        collectionView.reloadData()
     }
     
     /*
@@ -41,4 +52,29 @@ class MyPlayDateViewController: UIViewController {
         self.close()
     }
 
+    
+    
+    // COLLECTION VIEW
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        var cell:ChildHeadCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("ChildHeadCell", forIndexPath: indexPath) as ChildHeadCell
+        var invitation = invitations[indexPath.row]
+        cell.setData(invitation.child, selected:(invitation.confirmationStatus == MOInvitationStatusArrived))
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return invitations.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var invitation = invitations[indexPath.row]
+        invitation.confirmationStatus = MOInvitationStatusArrived
+        collectionView.reloadData()
+    }
+    
 }

@@ -25,34 +25,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zm-KD-A80">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zm-KD-A80" customClass="BlurryImageView" customModule="Wolf_Pack" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                 <color key="backgroundColor" red="1" green="0.055976856370000001" blue="0.180435348" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="L9j-2e-k16"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aubrey, host" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnW-22-aN9">
-                                <rect key="frame" x="16" y="154" width="288" height="24"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Playdate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph5-ld-dTN">
                                 <rect key="frame" x="0.0" y="33" width="320" height="40"/>
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.67843137249999996" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.15686275064945221" green="0.40000003576278687" blue="0.26274511218070984" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NoO-Sf-jW6" customClass="CircleImageView" customModule="Wolf_Pack" customModuleProvider="target">
-                                <rect key="frame" x="123" y="81" width="75" height="75"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="iia-hQ-ZD8"/>
-                                    <constraint firstAttribute="height" constant="75" id="nja-jT-8uD"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHECK IN KIDS WHEN THEY ARRIVE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBw-Yv-SJp">
                                 <rect key="frame" x="16" y="194" width="288" height="24"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="16"/>
@@ -79,6 +65,10 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="aLl-se-1th" id="96r-8O-a98"/>
+                                    <outlet property="delegate" destination="aLl-se-1th" id="BBV-qt-NRe"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7i-Mq-shY">
                                 <rect key="frame" x="0.0" y="517" width="158" height="51"/>
@@ -101,9 +91,6 @@
                                     <segue destination="hff-ZN-wfX" kind="presentation" id="oWM-gH-ahj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red-plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bhy-9B-e3a">
-                                <rect key="frame" x="121" y="533" width="19" height="18"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6k-dq-p4N">
                                 <rect key="frame" x="274" y="20" width="30" height="30"/>
                                 <state key="normal" title="x">
@@ -122,6 +109,20 @@
                                     <action selector="delete" destination="aLl-se-1th" eventType="touchUpInside" id="XKY-YF-dLs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKs-qb-VZX" customClass="CircleImageView" customModule="Wolf_Pack" customModuleProvider="target">
+                                <rect key="frame" x="122" y="77" width="75" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="1uF-Bn-83C"/>
+                                    <constraint firstAttribute="width" constant="75" id="HEc-Y5-br6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sarah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gle-4I-W7F">
+                                <rect key="frame" x="15" y="153" width="288" height="21"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -131,8 +132,10 @@
                         <size key="landscapeSize" width="568" height="320"/>
                     </simulatedScreenMetrics>
                     <connections>
-                        <outlet property="userBackgroundImageView" destination="9zm-KD-A80" id="Bsx-W6-Zmg"/>
-                        <outlet property="userHeadImageView" destination="NoO-Sf-jW6" id="gxQ-5g-goD"/>
+                        <outlet property="collectionView" destination="VEe-Fp-VCe" id="AVy-q1-cwd"/>
+                        <outlet property="userBackgroundImageView" destination="9zm-KD-A80" id="Gxl-wX-0NN"/>
+                        <outlet property="userHeadImageView" destination="zKs-qb-VZX" id="FWc-9y-Bn2"/>
+                        <outlet property="userLabel" destination="Gle-4I-W7F" id="bsc-Oc-vfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwU-eT-NZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,10 +213,7 @@
             <point key="canvasLocation" x="736" y="399"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="red-plus.png" width="50" height="50"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U9r-H1-Ni4"/>
+        <segue reference="oWM-gH-ahj"/>
     </inferredMetricsTieBreakers>
 </document>

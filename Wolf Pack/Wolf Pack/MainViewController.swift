@@ -59,7 +59,6 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         userBackgroundImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
         
         userHeadImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
-        
         userLabel.text = me.firstName
     }
     

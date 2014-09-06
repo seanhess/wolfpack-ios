@@ -11,6 +11,7 @@ import CoreData
 
 let MOInvitationStatusInvited = "Invited"
 let MOInvitationStatusAccepted = "Accepted"
+let MOInvitationStatusArrived = "Arrived"
 let MOInvitationStatusDeclined = "Declined"
 
 extension MOInvitation {
@@ -29,6 +30,12 @@ extension MOInvitation {
         var request = NSFetchRequest(entityName: "Invitation")
         var sort = NSSortDescriptor(key: "id", ascending: true)
         request.sortDescriptors = [sort]
+        return request
+    }
+    
+    class func requestPlayDate(playDateId:String) -> NSFetchRequest {
+        var request = self.requestAll()
+        request.predicate = NSPredicate(format: "playDate.id == %@", playDateId)
         return request
     }
 }
