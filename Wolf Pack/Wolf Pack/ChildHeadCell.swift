@@ -36,7 +36,6 @@ class ChildHeadCell : UICollectionViewCell {
         self.child = child
         let url = NSURL(string:child.imageUrl)
         imageView.sd_setImageWithURL(url)
-        println("Child \(child.firstName) selected \(selected)")
         renderSelected(selected)
     }
     
@@ -49,22 +48,6 @@ class ChildHeadCell : UICollectionViewCell {
         }
     }
     
-//    override var selected: Bool {
-//        set(value) {
-//            super.selected = value
-//            
-//            // needs to be driven based on whether it is actually selected
-//            
-//            println("Set Selected \(child?.firstName) \(value)")
-//            
-
-//        }
-//        get {
-//            return super.selected
-//        }
-//    }
-
-    
     
     
     
@@ -75,8 +58,6 @@ class ChildHeadCell : UICollectionViewCell {
 //        // make it a little bigger
 //        // make it pop off the page
 //        // add a drop shadow
-//        
-//        println("Add hover effect")
 //        
 //
 //        

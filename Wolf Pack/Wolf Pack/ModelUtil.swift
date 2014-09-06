@@ -9,8 +9,18 @@
 import CoreData
 
 class ModelUtil {
-     class var defaultMOC: NSManagedObjectContext {
+    
+    class var defaultMOC: NSManagedObjectContext {
         return CoreDataModelManager.sharedInstance.managedObjectContext!
+    }
+    
+    class func execute(request:NSFetchRequest) -> [AnyObject] {
+        var error:NSError?
+        var maybeResult = ModelUtil.defaultMOC.executeFetchRequest(request, error: &error)
+        if let result = maybeResult {
+            return result
+        }
+        return []
     }
     
     class func commitDefaultMOC() -> Bool {

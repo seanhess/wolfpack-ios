@@ -45,13 +45,11 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
         userLabel.text = me.firstName
         
         // THE CHILDRENS
-        var error:NSError?
+
         var request = MOChild.childrenRequest(me.id)
-        var maybeResult = ModelUtil.defaultMOC.executeFetchRequest(request, error: &error) as [MOChild]?
-        if let result = maybeResult {
-            myKidsInvitations = result.map({(child) in InvitationStatus(child: child, invited:false, accepted:false)})
-            collectionView.reloadData()
-        }
+        let result = ModelUtil.execute(request) as [MOChild]
+        myKidsInvitations = result.map({(child) in InvitationStatus(child: child, invited:false, accepted:false)})
+        collectionView.reloadData()
     }
     
 //    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
@@ -97,8 +95,6 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
         if (indexPath.row == numCells()-1) {
             return
         }
-        
-        println("select \(indexPath)")
         
         var status = myKidsInvitations[indexPath.row]
         status.invited = !status.invited

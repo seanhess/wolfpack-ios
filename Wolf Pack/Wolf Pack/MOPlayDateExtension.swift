@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Orbital Labs. All rights reserved.
 //
 
+
+
+
 import CoreData
 
 extension MOPlayDate {
@@ -19,12 +22,7 @@ extension MOPlayDate {
     }
     
     func addInvitationChild(child:MOChild) -> MOInvitation {
-        if let invitation = self.findInvitation(child) {
-            return invitation
-        }
-        else {
-            return MOInvitation.create(child, status: "", playDate: self)
-        }
+        return MOInvitation.create(child, status: MOInvitationStatusInvited, playDate: self)
     }
     
     func findInvitation(child:MOChild) -> MOInvitation? {
@@ -38,4 +36,7 @@ extension MOPlayDate {
         return nil
     }
     
+    class func send(playDate:MOPlayDate, invitations:[MOInvitation]) {
+        
+    }
 }

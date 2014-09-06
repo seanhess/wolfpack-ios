@@ -69,6 +69,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendInvite:" destination="N1Z-En-LeD" eventType="touchUpInside" id="bag-YM-iDb"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mm1-G7-VpQ">
                                 <rect key="frame" x="16" y="364" width="288" height="137"/>
@@ -90,6 +93,10 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="N1Z-En-LeD" id="Z35-z4-N46"/>
+                                    <outlet property="delegate" destination="N1Z-En-LeD" id="Z6j-aq-YyH"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294123888015747" green="0.95294123888015747" blue="0.95294123888015747" alpha="1" colorSpace="deviceRGB"/>

@@ -31,7 +31,7 @@
     </entity>
     <elements>
         <element name="Child" positionX="-45" positionY="45" width="128" height="135"/>
-        <element name="Invitation" positionX="-36" positionY="72" width="128" height="88"/>
+        <element name="Invitation" positionX="-36" positionY="72" width="128" height="90"/>
         <element name="PlayDate" positionX="-54" positionY="36" width="128" height="105"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>

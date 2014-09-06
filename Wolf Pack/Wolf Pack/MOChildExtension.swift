@@ -58,17 +58,22 @@ extension MOChild: Fetchable, FromJSON {
         var parent = MOUser.fetchOrCreate(parentID)
         
         if let value = json["imageUrl"].string {
-            println("Hello", value)
             self.imageUrl = value
         }
         
         self.parent = parent
-        println("Child \(self.firstName) to Parent \(self.parent.firstName) \(self.parent.id)")
+        println("SYNC Child \(self.firstName) - Parent: \(self.parent.firstName) \(self.parent.id)")
     }
     
     class func childrenRequest(parentId:String) -> NSFetchRequest {
         var request = self.allChildren()
         request.predicate = NSPredicate(format: "parent.id == %@", parentId)
+        return request
+    }
+    
+    class func otherChildrenRequest(parentId:String) -> NSFetchRequest {
+        var request = self.allChildren()
+        request.predicate = NSPredicate(format: "parent.id != %@", parentId)
         return request
     }
     

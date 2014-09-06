@@ -8,6 +8,11 @@
 
 import CoreData
 
+
+let MOInvitationStatusInvited = "Invited"
+let MOInvitationStatusAccepted = "Accepted"
+let MOInvitationStatusDeclined = "Declined"
+
 extension MOInvitation {
     
     class func create(child: MOChild, status: String, playDate: MOPlayDate) -> MOInvitation {
