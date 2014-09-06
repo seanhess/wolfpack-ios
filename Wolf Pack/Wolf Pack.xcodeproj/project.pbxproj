@@ -20,7 +20,7 @@
 		4AF5776519BA4D47006D2DDF /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF5776419BA4D47006D2DDF /* Fetchable.swift */; };
 		6898E2E64ECB416FBED9B3BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E5BBCC8074B6380BF3396 /* libPods.a */; };
 		785E33F819BA427A003D7048 /* ChildHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F619BA427A003D7048 /* ChildHeadCell.swift */; };
-		785E33F919BA427A003D7048 /* KidsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F719BA427A003D7048 /* KidsHomeViewController.swift */; };
+		785E33F919BA427A003D7048 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F719BA427A003D7048 /* MainViewController.swift */; };
 		785E33FD19BA5DD2003D7048 /* woot.png in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FC19BA5DD2003D7048 /* woot.png */; };
 		785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */; };
 		785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */; };
@@ -37,11 +37,12 @@
 		786ABEBE19BA2344006EFA96 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEBD19BA2344006EFA96 /* FromJSON.swift */; };
 		786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */; };
 		7894840619BAA9F000211104 /* InvitationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894840519BAA9F000211104 /* InvitationStatus.swift */; };
+		7894840819BB4DF000211104 /* InvitePlayDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7894840719BB4DF000211104 /* InvitePlayDate.storyboard */; };
+		7894840A19BB500D00211104 /* InvitePlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894840919BB500D00211104 /* InvitePlayDateViewController.swift */; };
+		7894840C19BB625100211104 /* MyPlayDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7894840B19BB625100211104 /* MyPlayDate.storyboard */; };
 		DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */; };
 		DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683419BB11FA007B1C02 /* MessagesViewController.swift */; };
 		DA50683719BB12D4007B1C02 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */; };
-		7894840819BB4DF000211104 /* NewPlayDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7894840719BB4DF000211104 /* NewPlayDate.storyboard */; };
-		7894840A19BB500D00211104 /* NewPlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894840919BB500D00211104 /* NewPlayDateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,7 @@
 		4AEBD6BC19BA005D007E714F /* MOUserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUserExtension.swift; sourceTree = "<group>"; };
 		4AF5776419BA4D47006D2DDF /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		785E33F619BA427A003D7048 /* ChildHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildHeadCell.swift; sourceTree = "<group>"; };
-		785E33F719BA427A003D7048 /* KidsHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsHomeViewController.swift; sourceTree = "<group>"; };
+		785E33F719BA427A003D7048 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		785E33FC19BA5DD2003D7048 /* woot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woot.png; sourceTree = "<group>"; };
 		785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
@@ -89,8 +90,9 @@
 		786ABEBD19BA2344006EFA96 /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSON.swift; sourceTree = "<group>"; };
 		786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		7894840519BAA9F000211104 /* InvitationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationStatus.swift; sourceTree = "<group>"; };
-		7894840719BB4DF000211104 /* NewPlayDate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewPlayDate.storyboard; sourceTree = "<group>"; };
-		7894840919BB500D00211104 /* NewPlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPlayDateViewController.swift; sourceTree = "<group>"; };
+		7894840719BB4DF000211104 /* InvitePlayDate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InvitePlayDate.storyboard; sourceTree = "<group>"; };
+		7894840919BB500D00211104 /* InvitePlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitePlayDateViewController.swift; sourceTree = "<group>"; };
+		7894840B19BB625100211104 /* MyPlayDate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPlayDate.storyboard; sourceTree = "<group>"; };
 		91BE4421C2E84CE8A6264197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B39E5BBCC8074B6380BF3396 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayDateViewController.swift; sourceTree = "<group>"; };
@@ -204,8 +206,6 @@
 				4AEBD6B219B973A5007E714F /* Model */,
 				786ABE9519B9685D006EFA96 /* AppDelegate.swift */,
 				786ABE9A19B9685D006EFA96 /* ViewController.swift */,
-				786ABE9C19B9685D006EFA96 /* Main.storyboard */,
-				7894840719BB4DF000211104 /* NewPlayDate.storyboard */,
 				786ABE9F19B9685D006EFA96 /* Images.xcassets */,
 				786ABEBF19BA2800006EFA96 /* libs */,
 				786ABE9319B9685D006EFA96 /* Supporting Files */,
@@ -249,15 +249,11 @@
 		786ABEB819B97869006EFA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */,
-				DA50683419BB11FA007B1C02 /* MessagesViewController.swift */,
-				DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */,
-				786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */,
-				786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */,
-				785E33F719BA427A003D7048 /* KidsHomeViewController.swift */,
+				7894840D19BB632D00211104 /* Main */,
+				7894840E19BB633500211104 /* My Play Date */,
+				7894840F19BB633F00211104 /* Invite Play Date */,
 				785E33F619BA427A003D7048 /* ChildHeadCell.swift */,
 				785E340219BA6BCC003D7048 /* CircleImageView.swift */,
-				7894840919BB500D00211104 /* NewPlayDateViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -268,6 +264,35 @@
 				786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		7894840D19BB632D00211104 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				785E33F719BA427A003D7048 /* MainViewController.swift */,
+				786ABE9C19B9685D006EFA96 /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		7894840E19BB633500211104 /* My Play Date */ = {
+			isa = PBXGroup;
+			children = (
+				DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */,
+				DA50683419BB11FA007B1C02 /* MessagesViewController.swift */,
+				DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */,
+				7894840B19BB625100211104 /* MyPlayDate.storyboard */,
+			);
+			name = "My Play Date";
+			sourceTree = "<group>";
+		};
+		7894840F19BB633F00211104 /* Invite Play Date */ = {
+			isa = PBXGroup;
+			children = (
+				7894840919BB500D00211104 /* InvitePlayDateViewController.swift */,
+				7894840719BB4DF000211104 /* InvitePlayDate.storyboard */,
+			);
+			name = "Invite Play Date";
 			sourceTree = "<group>";
 		};
 		9E57225A806248208FAB0922 /* Frameworks */ = {
@@ -363,9 +388,10 @@
 				786ABE9E19B9685D006EFA96 /* Main.storyboard in Resources */,
 				785E340819BA6F73003D7048 /* red-plus.png in Resources */,
 				785E33FD19BA5DD2003D7048 /* woot.png in Resources */,
-				7894840819BB4DF000211104 /* NewPlayDate.storyboard in Resources */,
+				7894840819BB4DF000211104 /* InvitePlayDate.storyboard in Resources */,
 				785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */,
 				785E340619BA6F4E003D7048 /* red-plus@2x.png in Resources */,
+				7894840C19BB625100211104 /* MyPlayDate.storyboard in Resources */,
 				786ABEA019B9685D006EFA96 /* Images.xcassets in Resources */,
 				785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */,
 			);
@@ -435,13 +461,13 @@
 				DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */,
 				4AEBD6BB19B9E5DA007E714F /* ModelUtil.swift in Sources */,
 				4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */,
-				7894840A19BB500D00211104 /* NewPlayDateViewController.swift in Sources */,
+				7894840A19BB500D00211104 /* InvitePlayDateViewController.swift in Sources */,
 				4AEBD6B919B977A4007E714F /* CoreDataModelManager.swift in Sources */,
 				DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */,
 				786ABE9619B9685D006EFA96 /* AppDelegate.swift in Sources */,
 				786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */,
 				786ABEBE19BA2344006EFA96 /* FromJSON.swift in Sources */,
-				785E33F919BA427A003D7048 /* KidsHomeViewController.swift in Sources */,
+				785E33F919BA427A003D7048 /* MainViewController.swift in Sources */,
 				4ADAF5D119BA372300F81B39 /* MOPlayDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

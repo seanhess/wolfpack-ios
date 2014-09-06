@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
+class MainViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet var userBackgroundImageView:UIImageView!
     @IBOutlet var userHeadImageView:UIImageView!
@@ -103,8 +103,8 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
     
     @IBAction func createPlaydate(sender: AnyObject) {
         // load the other screen
-        let sb = UIStoryboard(name: "NewPlayDate", bundle: nil)
-        let vc = sb.instantiateInitialViewController() as NewPlayDateViewController
+        let sb = UIStoryboard(name: "InvitePlayDate", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as InvitePlayDateViewController
         vc.myKids = myKidsInvitations.filter({ (status) in
             return status.invited
         }).map({ (status) in

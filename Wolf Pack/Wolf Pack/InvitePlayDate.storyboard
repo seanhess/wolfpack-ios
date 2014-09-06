@@ -17,7 +17,7 @@
         <!--Playdate-->
         <scene sceneID="DCS-u7-drP">
             <objects>
-                <viewController title="Playdate" id="N1Z-En-LeD" customClass="NewPlayDateViewController" customModule="Wolf_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Playdate" id="N1Z-En-LeD" customClass="InvitePlayDateViewController" customModule="Wolf_Pack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oGU-8M-rW3"/>
                         <viewControllerLayoutGuide type="bottom" id="0Z1-p3-gkM"/>

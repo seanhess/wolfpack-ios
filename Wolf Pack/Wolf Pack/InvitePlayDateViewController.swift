@@ -1,5 +1,5 @@
 //
-//  NewPlayDateViewController.swift
+//  InvitePlayDateViewController
 //  Wolf Pack
 //
 //  Created by Sean Hess on 9/6/14.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NewPlayDateViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class InvitePlayDateViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet var myKidsImageView:UIImageView!
     @IBOutlet var collectionView:UICollectionView!
