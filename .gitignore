@@ -19,3 +19,5 @@ xcshareddata
 
 
 *.lock
+
+.DS_Store

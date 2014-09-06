@@ -39,6 +39,7 @@
 		786ABEBE19BA2344006EFA96 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEBD19BA2344006EFA96 /* FromJSON.swift */; };
 		786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */; };
 		7894840619BAA9F000211104 /* InvitationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894840519BAA9F000211104 /* InvitationStatus.swift */; };
+		DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		7894840519BAA9F000211104 /* InvitationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationStatus.swift; sourceTree = "<group>"; };
 		91BE4421C2E84CE8A6264197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B39E5BBCC8074B6380BF3396 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayDateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 		786ABEB819B97869006EFA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */,
 				786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */,
 				786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */,
 				785E33F719BA427A003D7048 /* KidsHomeViewController.swift */,
@@ -424,6 +427,7 @@
 				4AEBD6BB19B9E5DA007E714F /* ModelUtil.swift in Sources */,
 				4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */,
 				4AEBD6B919B977A4007E714F /* CoreDataModelManager.swift in Sources */,
+				DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */,
 				786ABE9619B9685D006EFA96 /* AppDelegate.swift in Sources */,
 				786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */,
 				786ABEBE19BA2344006EFA96 /* FromJSON.swift in Sources */,
