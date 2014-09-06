@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+let WPColorBlue = UIColor(red: 0.10, green: 0.33, blue: 1.0, alpha: 1.0)
+let WPColorGreen = UIColor(red: 0.14, green: 0.72, blue: 0.32, alpha: 1.0)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             

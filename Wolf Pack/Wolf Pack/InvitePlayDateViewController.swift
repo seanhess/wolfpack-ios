@@ -16,6 +16,7 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
     @IBOutlet weak var whereButton: UIButton!
     @IBOutlet weak var whenButton: UIButton!
     @IBOutlet weak var carousel:iCarousel!
+    @IBOutlet weak var sendButton:UIButton!
     
     var invitations:[InvitationStatus] = []
     var myKids:[MOChild] = []
@@ -42,19 +43,21 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         reallyInvited = []
 //        collectionView.reloadData()
         
-        let blue = UIColor(red: 0.10, green: 0.33, blue: 1.0, alpha: 1.0)
-        whereButton.layer.borderColor = blue.CGColor
+        whereButton.layer.borderColor = WPColorBlue.CGColor
         whereButton.layer.borderWidth = 2
-        whereButton.setTitleColor(blue, forState: UIControlState.Normal)
-        whenButton.layer.borderColor = blue.CGColor
+        whereButton.setTitleColor(WPColorBlue, forState: UIControlState.Normal)
+        whenButton.layer.borderColor = WPColorBlue.CGColor
         whenButton.layer.borderWidth = 2
-        whenButton.setTitleColor(blue, forState: UIControlState.Normal)
+        whenButton.setTitleColor(WPColorBlue, forState: UIControlState.Normal)
         
         carousel.type = iCarouselType.Wheel
         carousel.vertical = false
         carousel.delegate = self
         carousel.dataSource = self
         carousel.reloadData()
+    
+        sendButton.backgroundColor = UIColor.grayColor()
+        sendButton.enabled = false
     }
     
     
@@ -64,6 +67,16 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         var status = invitations[index]
         status.invited = !status.invited
         reallyInvited = reallyInvitedFilter()
+        
+        if reallyInvited.count > 0 {
+            sendButton.backgroundColor = WPColorGreen
+            sendButton.enabled = true
+        }
+        else {
+            sendButton.backgroundColor = UIColor.grayColor()
+            sendButton.enabled = false
+        }
+        
         carousel.reloadData()
         collectionView.reloadData()
     }

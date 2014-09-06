@@ -21,7 +21,6 @@
 		6898E2E64ECB416FBED9B3BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E5BBCC8074B6380BF3396 /* libPods.a */; };
 		785E33F819BA427A003D7048 /* ChildHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F619BA427A003D7048 /* ChildHeadCell.swift */; };
 		785E33F919BA427A003D7048 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F719BA427A003D7048 /* MainViewController.swift */; };
-		785E33FD19BA5DD2003D7048 /* woot.png in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FC19BA5DD2003D7048 /* woot.png */; };
 		785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */; };
 		785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */; };
 		785E340319BA6BCD003D7048 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E340219BA6BCC003D7048 /* CircleImageView.swift */; };
@@ -50,6 +49,11 @@
 		7894842219BB843B00211104 /* AWCollectionViewDialLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894842119BB843B00211104 /* AWCollectionViewDialLayout.m */; };
 		7894842719BB8A1400211104 /* WolfPawLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894842619BB8A1400211104 /* WolfPawLayout.swift */; };
 		7894842B19BB925E00211104 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7894842A19BB925E00211104 /* iCarousel.m */; };
+		78A4BDEA19BBA38A0079B1DE /* close-white_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A4BDE619BBA38A0079B1DE /* close-white_10.png */; };
+		78A4BDEB19BBA38A0079B1DE /* close-white_10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A4BDE719BBA38A0079B1DE /* close-white_10@2x.png */; };
+		78A4BDEC19BBA38A0079B1DE /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A4BDE819BBA38A0079B1DE /* close.png */; };
+		78A4BDED19BBA38A0079B1DE /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A4BDE919BBA38A0079B1DE /* close@2x.png */; };
+		78A4BDEF19BBAD4F0079B1DE /* badge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78A4BDEE19BBAD4F0079B1DE /* badge@2x.png */; };
 		DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */; };
 		DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683419BB11FA007B1C02 /* MessagesViewController.swift */; };
 		DA50683719BB12D4007B1C02 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */; };
@@ -80,7 +84,6 @@
 		4AF5776419BA4D47006D2DDF /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		785E33F619BA427A003D7048 /* ChildHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildHeadCell.swift; sourceTree = "<group>"; };
 		785E33F719BA427A003D7048 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		785E33FC19BA5DD2003D7048 /* woot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woot.png; sourceTree = "<group>"; };
 		785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		785E340219BA6BCC003D7048 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
@@ -115,6 +118,11 @@
 		7894842619BB8A1400211104 /* WolfPawLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WolfPawLayout.swift; sourceTree = "<group>"; };
 		7894842919BB925E00211104 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = iCarousel/iCarousel.h; sourceTree = "<group>"; };
 		7894842A19BB925E00211104 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = iCarousel/iCarousel.m; sourceTree = "<group>"; };
+		78A4BDE619BBA38A0079B1DE /* close-white_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-white_10.png"; sourceTree = "<group>"; };
+		78A4BDE719BBA38A0079B1DE /* close-white_10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-white_10@2x.png"; sourceTree = "<group>"; };
+		78A4BDE819BBA38A0079B1DE /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		78A4BDE919BBA38A0079B1DE /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		78A4BDEE19BBAD4F0079B1DE /* badge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badge@2x.png"; sourceTree = "<group>"; };
 		91BE4421C2E84CE8A6264197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B39E5BBCC8074B6380BF3396 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayDateViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +207,11 @@
 				7894841A19BB79DB00211104 /* menu-blue@2x.png */,
 				7894841419BB79AC00211104 /* menu.png */,
 				7894841C19BB79E200211104 /* menu@2x.png */,
+				78A4BDE619BBA38A0079B1DE /* close-white_10.png */,
+				78A4BDE719BBA38A0079B1DE /* close-white_10@2x.png */,
+				78A4BDE819BBA38A0079B1DE /* close.png */,
+				78A4BDE919BBA38A0079B1DE /* close@2x.png */,
+				78A4BDEE19BBAD4F0079B1DE /* badge@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -228,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				785E340419BA6F43003D7048 /* Resources */,
-				785E33FC19BA5DD2003D7048 /* woot.png */,
 				786ABEB819B97869006EFA96 /* Views */,
 				786ABEB519B96E96006EFA96 /* Data */,
 				4AEBD6B219B973A5007E714F /* Model */,
@@ -278,8 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				7894840D19BB632D00211104 /* Main */,
-				7894840E19BB633500211104 /* My Play Date */,
 				7894840F19BB633F00211104 /* Invite Play Date */,
+				7894840E19BB633500211104 /* My Play Date */,
 				785E33F619BA427A003D7048 /* ChildHeadCell.swift */,
 				785E340219BA6BCC003D7048 /* CircleImageView.swift */,
 				7894841019BB70F900211104 /* BlurryImageView.swift */,
@@ -421,18 +433,22 @@
 			files = (
 				786ABE9E19B9685D006EFA96 /* Main.storyboard in Resources */,
 				785E340819BA6F73003D7048 /* red-plus.png in Resources */,
-				785E33FD19BA5DD2003D7048 /* woot.png in Resources */,
 				7894840819BB4DF000211104 /* InvitePlayDate.storyboard in Resources */,
 				785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */,
 				7894841B19BB79DB00211104 /* menu-blue@2x.png in Resources */,
 				785E340619BA6F4E003D7048 /* red-plus@2x.png in Resources */,
+				78A4BDEB19BBA38A0079B1DE /* close-white_10@2x.png in Resources */,
 				7894841D19BB79E200211104 /* menu@2x.png in Resources */,
 				7894841519BB79AC00211104 /* check.png in Resources */,
+				78A4BDED19BBA38A0079B1DE /* close@2x.png in Resources */,
 				7894840C19BB625100211104 /* MyPlayDate.storyboard in Resources */,
 				7894841719BB79AC00211104 /* menu.png in Resources */,
+				78A4BDEA19BBA38A0079B1DE /* close-white_10.png in Resources */,
+				78A4BDEF19BBAD4F0079B1DE /* badge@2x.png in Resources */,
 				786ABEA019B9685D006EFA96 /* Images.xcassets in Resources */,
 				7894841919BB79C000211104 /* check@2x.png in Resources */,
 				7894841619BB79AC00211104 /* menu-blue.png in Resources */,
+				78A4BDEC19BBA38A0079B1DE /* close.png in Resources */,
 				785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

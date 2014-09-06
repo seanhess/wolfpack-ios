@@ -52,19 +52,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MY KIDS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccR-uX-yZ5">
-                                <rect key="frame" x="16" y="196" width="97" height="24"/>
+                                <rect key="frame" x="16" y="192" width="97" height="24"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.20000001788139343" green="0.20000001788139343" blue="0.20000001788139343" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41c-U7-uPp" customClass="CircleImageView" customModule="Wolf_Pack" customModuleProvider="target">
-                                <rect key="frame" x="123" y="52" width="75" height="75"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="cHd-NF-hMV"/>
-                                    <constraint firstAttribute="width" constant="75" id="yeN-DV-Qxg"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sarah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clR-lG-lcv">
                                 <rect key="frame" x="16" y="135" width="288" height="21"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
@@ -102,7 +94,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BsM-at-CPS">
-                                <rect key="frame" x="13" y="228" width="291" height="130"/>
+                                <rect key="frame" x="13" y="252" width="291" height="130"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sqh-t1-SYa">
                                     <size key="itemSize" width="50" height="60"/>
@@ -140,22 +132,28 @@
                                     <outlet property="delegate" destination="MQR-8R-KKj" id="ih0-MH-cgQ"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy0-zg-M3p">
-                                <rect key="frame" x="262" y="74" width="22" height="22"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doQ-Uo-m2i">
-                                <rect key="frame" x="13" y="14" width="15" height="22"/>
+                                <rect key="frame" x="13" y="20" width="15" height="22"/>
                                 <state key="normal" image="menu.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tiu-83-JJ5">
+                                <rect key="frame" x="0.0" y="230" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.70980393886566162" green="0.70980393886566162" blue="0.70980393886566162" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41c-U7-uPp" customClass="CircleImageView" customModule="Wolf_Pack" customModuleProvider="target">
+                                <rect key="frame" x="123" y="52" width="75" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="cHd-NF-hMV"/>
+                                    <constraint firstAttribute="width" constant="75" id="yeN-DV-Qxg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95294123888015747" green="0.95294123888015747" blue="0.95294123888015747" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="BsM-at-CPS" firstAttribute="top" secondItem="X83-tj-pbU" secondAttribute="bottom" constant="55" id="14C-zf-8tv"/>
+                            <constraint firstItem="BsM-at-CPS" firstAttribute="top" secondItem="X83-tj-pbU" secondAttribute="bottom" constant="72" id="14C-zf-8tv"/>
                             <constraint firstItem="X83-tj-pbU" firstAttribute="top" secondItem="7o5-dL-0Xr" secondAttribute="topMargin" id="Vzm-s6-QLF"/>
                             <constraint firstItem="X83-tj-pbU" firstAttribute="leading" secondItem="7o5-dL-0Xr" secondAttribute="leadingMargin" constant="-16" id="aUR-f7-LEh"/>
                             <constraint firstAttribute="centerX" secondItem="41c-U7-uPp" secondAttribute="centerX" id="dLF-Aw-xIX"/>
@@ -163,6 +161,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kids" id="Kab-sE-Fpx"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>

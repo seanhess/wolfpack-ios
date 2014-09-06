@@ -14,13 +14,17 @@ import UIKit
 
 // 100x100
 
-class ChildHeadCell : UICollectionViewCell {
+class ChildHeadCell : UICollectionViewCell, InvitationStatusDelegate {
     
     var imageView:UIImageView!
     var checkView:UIImageView!
     var nameLabel:UILabel!
     
+    var circle:CAShapeLayer!
+    var drawAnimation:CABasicAnimation?
     var child:MOChild?
+
+    var invitation:InvitationStatus?
     
     func configure() {
         self.backgroundColor = UIColor.clearColor()
@@ -42,6 +46,9 @@ class ChildHeadCell : UICollectionViewCell {
         self.contentView.addSubview(imageView)
         self.contentView.addSubview(checkView)
         self.contentView.addSubview(nameLabel)
+        
+        circle = CAShapeLayer()
+        imageView.layer.addSublayer(circle)
     }
     
     override init(frame: CGRect) {
@@ -54,6 +61,7 @@ class ChildHeadCell : UICollectionViewCell {
         configure()
     }
 
+    // this RE-SETS the data, never animating
     func setData(child:MOChild, selected:Bool) {
         self.child = child
         let url = NSURL(string:child.imageUrl)
@@ -62,18 +70,91 @@ class ChildHeadCell : UICollectionViewCell {
         renderSelected(selected)
     }
     
-    func renderSelected(value:Bool) {
-        checkView.hidden = !value
-        
-//        if value {
-//            imageView.layer.borderColor = UIColor(red: 0.14, green: 0.72, blue: 0.32, alpha: 1.0).CGColor
-//        }
-//        else {
-//            imageView.layer.borderColor = UIColor.clearColor().CGColor
-//        }
+    // alternative to setData
+    func setInvitationStatus(invite:InvitationStatus) {
+        invitation?.delegate = nil
+        invitation = invite
+        invitation?.delegate = self
+        setData(invite.child, selected:invite.invited)
     }
     
+    // without animation
+    func renderSelected(value:Bool) {
+        circle.hidden = !value
+        checkView.hidden = !value
+    }
     
+    func animateCircle() {
+        let radius = imageView.bounds.size.width/2
+        
+        // Make a circular shape
+        circle.path = UIBezierPath(roundedRect: CGRectMake(0, 0, 2.0*radius, 2.0*radius), cornerRadius: radius).CGPath
+        // Center the shape in self.view
+        circle.position = CGPointMake(CGRectGetMidX(self.imageView.frame)-radius,
+        CGRectGetMidY(self.imageView.frame)-radius);
+        
+        // Configure the apperence of the circle
+        circle.fillColor = UIColor.clearColor().CGColor
+        circle.strokeColor = WPColorGreen.CGColor
+        circle.lineWidth = 5
+        circle.hidden = false
+        
+        // Configure animation
+        drawAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        drawAnimation?.duration            = 0.5 // "animate over 10 seconds or so.."
+        drawAnimation?.repeatCount         = 1.0  // Animate only once..
+
+        // Animate from no part of the stroke being drawn to the entire stroke being drawn
+        drawAnimation?.fromValue = 0.0
+        drawAnimation?.toValue   = 1.0
+
+        // Experiment with timing to get the appearence to look the way you want
+        drawAnimation?.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+
+        // Add the animation to the circle
+        circle.addAnimation(drawAnimation, forKey:"drawCircleAnimation")
+
+        delay(0.5) {
+            println("done")
+            self.checkView.hidden = false
+            var frame = self.checkView.frame
+            frame.size = CGSize(width: 0, height: 0)
+            self.checkView.frame = frame
+            
+            UIView.animateWithDuration(0.2, animations: {
+                frame.size = CGSize(width: 26, height: 26)
+                self.checkView.frame = frame
+            }, completion: {(done) in
+                
+            })
+        }
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        circle.removeAllAnimations()
+//        println("prepare for reuse")
+//    }
+    
+    func didUpdateStatus() {
+        if self.invitation!.invited {
+            circle.hidden = false
+            animateCircle()
+        }
+        else {
+            circle.hidden = true
+            checkView.hidden = true
+        }
+    }
     
     
     

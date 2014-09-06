@@ -36,6 +36,7 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         var request = MOChild.childrenRequest(me.id)
         let result = ModelUtil.execute(request) as [MOChild]
         myKidsInvitations = result.map({(child) in InvitationStatus(child: child, invited:false, accepted:false)})
+        println("viewWillAppear reload")
         collectionView.reloadData()
         
         createButton.hidden = kidsInvited().count == 0
@@ -67,9 +68,9 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
 //    }
     
     /// NSFETCHED RESULTS
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        self.collectionView.reloadData()
-    }
+//    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+//        self.collectionView.reloadData()
+//    }
 
     
     /// TABLE VIEW
@@ -86,12 +87,14 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         else {
             var cell:ChildHeadCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("ChildHeadCell", forIndexPath: indexPath) as ChildHeadCell
             var status = myKidsInvitations[indexPath.row]
-            cell.setData(status.child, selected:status.invited)
+            cell.setInvitationStatus(status)
+//            cell.setData(status.child, selected:status.invited)
             return cell
         }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        println("num cells", numCells())
         return numCells()
     }
     
@@ -109,11 +112,22 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         if (indexPath.row == numCells()-1) {
             return
         }
-        
+        toggleSelect(indexPath)
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == numCells()-1) {
+            return
+        }
+        toggleSelect(indexPath)
+    }
+    
+    func toggleSelect(indexPath:NSIndexPath) {
         var status = myKidsInvitations[indexPath.row]
         status.invited = !status.invited
+        status.delegate?.didUpdateStatus()
         createButton.hidden = kidsInvited().count == 0
-        self.collectionView.reloadData()
+        println("selected \(status.invited)")
     }
     
     @IBAction func createPlaydate(sender: AnyObject) {
