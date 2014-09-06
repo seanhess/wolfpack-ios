@@ -41,6 +41,12 @@
 		7894840A19BB500D00211104 /* InvitePlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894840919BB500D00211104 /* InvitePlayDateViewController.swift */; };
 		7894840C19BB625100211104 /* MyPlayDate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7894840B19BB625100211104 /* MyPlayDate.storyboard */; };
 		7894841119BB70F900211104 /* BlurryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894841019BB70F900211104 /* BlurryImageView.swift */; };
+		7894841519BB79AC00211104 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841219BB79AC00211104 /* check.png */; };
+		7894841619BB79AC00211104 /* menu-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841319BB79AC00211104 /* menu-blue.png */; };
+		7894841719BB79AC00211104 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841419BB79AC00211104 /* menu.png */; };
+		7894841919BB79C000211104 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841819BB79C000211104 /* check@2x.png */; };
+		7894841B19BB79DB00211104 /* menu-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841A19BB79DB00211104 /* menu-blue@2x.png */; };
+		7894841D19BB79E200211104 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7894841C19BB79E200211104 /* menu@2x.png */; };
 		DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */; };
 		DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683419BB11FA007B1C02 /* MessagesViewController.swift */; };
 		DA50683719BB12D4007B1C02 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */; };
@@ -95,6 +101,12 @@
 		7894840919BB500D00211104 /* InvitePlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitePlayDateViewController.swift; sourceTree = "<group>"; };
 		7894840B19BB625100211104 /* MyPlayDate.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyPlayDate.storyboard; sourceTree = "<group>"; };
 		7894841019BB70F900211104 /* BlurryImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurryImageView.swift; sourceTree = "<group>"; };
+		7894841219BB79AC00211104 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		7894841319BB79AC00211104 /* menu-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-blue.png"; sourceTree = "<group>"; };
+		7894841419BB79AC00211104 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		7894841819BB79C000211104 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		7894841A19BB79DB00211104 /* menu-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-blue@2x.png"; sourceTree = "<group>"; };
+		7894841C19BB79E200211104 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		91BE4421C2E84CE8A6264197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B39E5BBCC8074B6380BF3396 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayDateViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +185,12 @@
 				785E340019BA6928003D7048 /* OpenSans-Semibold.ttf */,
 				785E340519BA6F4E003D7048 /* red-plus@2x.png */,
 				785E340719BA6F73003D7048 /* red-plus.png */,
+				7894841219BB79AC00211104 /* check.png */,
+				7894841819BB79C000211104 /* check@2x.png */,
+				7894841319BB79AC00211104 /* menu-blue.png */,
+				7894841A19BB79DB00211104 /* menu-blue@2x.png */,
+				7894841419BB79AC00211104 /* menu.png */,
+				7894841C19BB79E200211104 /* menu@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -393,9 +411,15 @@
 				785E33FD19BA5DD2003D7048 /* woot.png in Resources */,
 				7894840819BB4DF000211104 /* InvitePlayDate.storyboard in Resources */,
 				785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */,
+				7894841B19BB79DB00211104 /* menu-blue@2x.png in Resources */,
 				785E340619BA6F4E003D7048 /* red-plus@2x.png in Resources */,
+				7894841D19BB79E200211104 /* menu@2x.png in Resources */,
+				7894841519BB79AC00211104 /* check.png in Resources */,
 				7894840C19BB625100211104 /* MyPlayDate.storyboard in Resources */,
+				7894841719BB79AC00211104 /* menu.png in Resources */,
 				786ABEA019B9685D006EFA96 /* Images.xcassets in Resources */,
+				7894841919BB79C000211104 /* check@2x.png in Resources */,
+				7894841619BB79AC00211104 /* menu-blue.png in Resources */,
 				785E340119BA6928003D7048 /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

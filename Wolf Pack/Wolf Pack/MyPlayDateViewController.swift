@@ -51,6 +51,7 @@ class MyPlayDateViewController: UIViewController {
     
     @IBAction func delete() {
         ModelUtil.defaultMOC.deleteObject(playDate)
+        ModelUtil.commitDefaultMOC()
         self.close()
     }
 

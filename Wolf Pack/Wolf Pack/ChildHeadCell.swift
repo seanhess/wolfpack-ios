@@ -17,11 +17,18 @@ import UIKit
 class ChildHeadCell : UICollectionViewCell {
     
     var imageView:UIImageView!
+    var checkView:UIImageView!
+    var nameLabel:UILabel!
+    
     var child:MOChild?
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
         self.backgroundColor = UIColor.clearColor()
+        self.clipsToBounds = false
+        
+        checkView = UIImageView(image: UIImage(named: "check.png"))
+        checkView.frame = CGRectMake(self.bounds.size.width-24, self.bounds.size.width-24, 26, 26)
 
         imageView = UIImageView(frame: self.bounds)
         imageView.layer.cornerRadius = imageView.frame.size.height / 2
@@ -29,23 +36,32 @@ class ChildHeadCell : UICollectionViewCell {
         imageView.layer.borderColor = UIColor.clearColor().CGColor
         imageView.layer.borderWidth = 3
         
+        nameLabel = UILabel(frame: CGRectMake(0, self.bounds.size.height, self.bounds.size.width, 20))
+        nameLabel.textAlignment = NSTextAlignment.Center
+        nameLabel.font = UIFont.systemFontOfSize(12.0)
+        
         self.contentView.addSubview(imageView)
+        self.contentView.addSubview(checkView)
+        self.contentView.addSubview(nameLabel)
     }
 
     func setData(child:MOChild, selected:Bool) {
         self.child = child
         let url = NSURL(string:child.imageUrl)
         imageView.sd_setImageWithURL(url)
+        nameLabel.text = child.firstName
         renderSelected(selected)
     }
     
     func renderSelected(value:Bool) {
-        if value {
-            imageView.layer.borderColor = UIColor(red: 0.14, green: 0.72, blue: 0.32, alpha: 1.0).CGColor
-        }
-        else {
-            imageView.layer.borderColor = UIColor.clearColor().CGColor
-        }
+        checkView.hidden = !value
+        
+//        if value {
+//            imageView.layer.borderColor = UIColor(red: 0.14, green: 0.72, blue: 0.32, alpha: 1.0).CGColor
+//        }
+//        else {
+//            imageView.layer.borderColor = UIColor.clearColor().CGColor
+//        }
     }
     
     

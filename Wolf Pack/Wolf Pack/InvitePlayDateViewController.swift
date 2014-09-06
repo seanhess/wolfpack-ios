@@ -13,6 +13,9 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
     @IBOutlet var myKidsImageView:UIImageView!
     @IBOutlet var collectionView:UICollectionView!
     
+    @IBOutlet weak var whereButton: UIButton!
+    @IBOutlet weak var whenButton: UIButton!
+    
     var invitations:[InvitationStatus] = []
     var myKids:[MOChild] = []
     
@@ -35,6 +38,14 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         let result = ModelUtil.execute(request) as [MOChild]
         invitations = result.map({(child) in InvitationStatus(child: child, invited:false, accepted:false)})
         collectionView.reloadData()
+        
+        let blue = UIColor(red: 0.10, green: 0.33, blue: 1.0, alpha: 1.0)
+        whereButton.layer.borderColor = blue.CGColor
+        whereButton.layer.borderWidth = 2
+        whereButton.setTitleColor(blue, forState: UIControlState.Normal)
+        whenButton.layer.borderColor = blue.CGColor
+        whenButton.layer.borderWidth = 2
+        whenButton.setTitleColor(blue, forState: UIControlState.Normal)
     }
     
     /// TABLE VIEW
