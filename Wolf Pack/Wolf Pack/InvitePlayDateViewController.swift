@@ -85,8 +85,8 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         }) as [MOInvitation]
         
         var allInvitations = otherInvitations + kidInvitations
-        
         ModelUtil.commitDefaultMOC()
+        MOPlayDate.send(playDate, invitations: allInvitations)
 
         var alert = UIAlertController(title: "Good Job", message: "Playdate invite was sent.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Return to Home", style: UIAlertActionStyle.Default, handler: {(action) in

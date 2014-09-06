@@ -11,3 +11,7 @@ import Foundation
 protocol FromJSON {
     func updateFromJSON(jsonData:JSONValue)
 }
+
+protocol ToJSON {
+    func toJSON() -> JSONValue
+}

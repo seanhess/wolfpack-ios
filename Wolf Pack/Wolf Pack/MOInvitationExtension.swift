@@ -14,7 +14,7 @@ let MOInvitationStatusAccepted = "Accepted"
 let MOInvitationStatusArrived = "Arrived"
 let MOInvitationStatusDeclined = "Declined"
 
-extension MOInvitation {
+extension MOInvitation: ToJSON {
     
     class func create(child: MOChild, status: String, playDate: MOPlayDate) -> MOInvitation {
         var invite = NSEntityDescription.insertNewObjectForEntityForName("Invitation", inManagedObjectContext: ModelUtil.defaultMOC) as MOInvitation
@@ -37,5 +37,33 @@ extension MOInvitation {
         var request = self.requestAll()
         request.predicate = NSPredicate(format: "playDate.id == %@", playDateId)
         return request
+    }
+
+    func send() {
+        println("sending invite \(self.toJSON())")
+
+        var url = NSURL(string: "http://wolfpack-api.herokuapp.com/invitations")
+        var request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.HTTPBody = self.toJSON().description.dataUsingEncoding(NSUTF8StringEncoding)
+
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, hasError) in
+            println(response)
+            let json = JSONValue(data)
+            var id = json["_id"].string!
+            self.id = id
+            ModelUtil.commitDefaultMOC()
+        }
+    }
+
+    func toJSON() -> JSONValue {
+        var dict = NSMutableDictionary()
+
+        dict.setValue(self.playDate.id, forKey: "playDateId")
+        dict.setValue(self.child.id, forKey: "childId")
+        dict.setValue(self.confirmationStatus, forKey: "confirmed")
+
+        return JSONValue(dict)
     }
 }
