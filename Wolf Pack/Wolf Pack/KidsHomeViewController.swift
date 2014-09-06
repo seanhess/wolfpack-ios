@@ -14,25 +14,23 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet var userBackgroundImageView:UIImageView!
     @IBOutlet var userHeadImageView:UIImageView!
     @IBOutlet var userLabel:UILabel!
+
     
     var me:MOUser!
-    var fetchedResults:NSFetchedResultsController?
-    
-    var currentPlayDate:MOPlayDate?
-    
-    var selectedChildren:[String : MOChild]!
+    var myKidsInvitations:[InvitationStatus] = []
     
     @IBOutlet var collectionView:UICollectionView!
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.selectedChildren = [:]
-        
         self.collectionView.allowsMultipleSelection = true
         
         me = MOUser.me()
-        currentPlayDate = MOPlayDate.create(NSDate(), location: "", owner: me)
         
         // BLURRRRY
         var blurEffect = UIBlurEffect(style: .Light)
@@ -45,20 +43,19 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
         userHeadImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
         
         userLabel.text = me.firstName
-        println("USER \(me.firstName)")
-        
-        // Hide navigation bar
-        self.navigationController?.navigationBarHidden = true
         
         // THE CHILDRENS
         var error:NSError?
-        self.fetchedResults = NSFetchedResultsController(fetchRequest: MOChild.childrenRequest(me.id), managedObjectContext: ModelUtil.defaultMOC, sectionNameKeyPath: nil, cacheName: nil)
-        self.fetchedResults?.delegate = self
-        self.fetchedResults?.performFetch(&error)
+        var request = MOChild.childrenRequest(me.id)
+        var maybeResult = ModelUtil.defaultMOC.executeFetchRequest(request, error: &error) as [MOChild]?
+        if let result = maybeResult {
+            myKidsInvitations = result.map({(child) in InvitationStatus(child: child, invited:false, accepted:false)})
+            collectionView.reloadData()
+        }
     }
     
 //    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-//        
+//
 //    }
     
     
@@ -81,10 +78,8 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
         }
         else {
             var cell:ChildHeadCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("ChildHeadCell", forIndexPath: indexPath) as ChildHeadCell
-            var maybeChild = self.fetchedResults?.objectAtIndexPath(indexPath) as MOChild?
-            if let child = maybeChild {
-                cell.setData(child, selected:isSelected(child))
-            }
+            var status = myKidsInvitations[indexPath.row]
+            cell.setData(status.child, selected:status.invited)
             return cell
         }
     }
@@ -94,11 +89,7 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
     }
     
     func numCells() -> Int {
-        if let sections = self.fetchedResults?.sections {
-            var section = sections[0] as NSFetchedResultsSectionInfo
-            return section.numberOfObjects+1
-        }
-        return 1
+        return myKidsInvitations.count+1
     }
 
     
@@ -109,22 +100,21 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
         
         println("select \(indexPath)")
         
-        var child = self.fetchedResults?.objectAtIndexPath(indexPath)! as MOChild
-        
-        if let value = self.selectedChildren[child.id] {
-            self.selectedChildren[child.id] = nil
-        }
-        else {
-            self.selectedChildren[child.id] = child
-        }
-        
+        var status = myKidsInvitations[indexPath.row]
+        status.invited = !status.invited
         self.collectionView.reloadData()
     }
     
-    func isSelected(child:MOChild) -> Bool {
-        if let value = self.selectedChildren[child.id] {
-            return true
-        }
-        return false
+    @IBAction func createPlaydate(sender: AnyObject) {
+        // load the other screen
+        let sb = UIStoryboard(name: "NewPlayDate", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as NewPlayDateViewController
+        vc.myKids = myKidsInvitations.filter({ (status) in
+            return status.invited
+        }).map({ (status) in
+            return status.child
+        })
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }

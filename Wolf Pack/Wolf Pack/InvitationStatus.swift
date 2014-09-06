@@ -8,16 +8,10 @@
 
 import Foundation
 
-protocol InvitationStatusDelegate :class {
-    func didUpdateStatus()
-}
-
 class InvitationStatus {
     var child: MOChild
     var invited: Bool
     var accepted: Bool
-    
-    weak var delegate:InvitationStatusDelegate?
     
     init(child:MOChild, invited:Bool, accepted:Bool) {
         self.child = child

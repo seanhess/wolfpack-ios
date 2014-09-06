@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3mc-4D-git">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3mc-4D-git">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
@@ -33,53 +33,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVO-et-Yh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-369" y="-463"/>
-        </scene>
-        <!--Play Dates View Controller-->
-        <scene sceneID="W8l-ZY-goh">
-            <objects>
-                <viewController id="bER-VX-1Ya" customClass="PlayDatesViewController" customModule="Wolf_Pack" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vd2-1A-nhb"/>
-                        <viewControllerLayoutGuide type="bottom" id="UfX-Zh-jQK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fif-eS-uKM">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6XE-xs-ioq">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="bER-VX-1Ya" id="6h3-Kr-CjV"/>
-                                    <outlet property="delegate" destination="bER-VX-1Ya" id="3Kc-pz-4BD"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="UfX-Zh-jQK" firstAttribute="top" secondItem="6XE-xs-ioq" secondAttribute="bottom" id="Ny4-r6-QBh"/>
-                            <constraint firstItem="6XE-xs-ioq" firstAttribute="top" secondItem="fif-eS-uKM" secondAttribute="topMargin" id="d4v-o8-f1J"/>
-                            <constraint firstItem="6XE-xs-ioq" firstAttribute="leading" secondItem="fif-eS-uKM" secondAttribute="leadingMargin" constant="-16" id="jQZ-XF-pGh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6XE-xs-ioq" secondAttribute="trailing" constant="-16" id="mRJ-wl-Zv9"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Q4J-ZI-Vc6">
-                        <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4yF-cY-jVT">
-                            <rect key="frame" x="180" y="7" width="240" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Make a New Date">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="6XE-xs-ioq" id="Wz3-7e-lpP"/>
-                        <segue destination="hsi-mZ-qay" kind="show" identifier="DateSegue" id="5Ye-z7-7xJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fPY-pk-84b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="325" y="-460"/>
         </scene>
         <!--Home-->
         <scene sceneID="bWU-L4-FOU">
@@ -134,6 +87,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createPlaydate:" destination="MQR-8R-KKj" eventType="touchUpInside" id="myw-wj-s0U"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BsM-at-CPS">
                                 <rect key="frame" x="13" y="228" width="291" height="273"/>
