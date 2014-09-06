@@ -20,10 +20,14 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
     
     var currentPlayDate:MOPlayDate?
     
+    var selectedChildren:[String : MOChild]!
+    
     @IBOutlet var collectionView:UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.selectedChildren = [:]
         
         self.collectionView.allowsMultipleSelection = true
         
@@ -36,9 +40,9 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
         blurEffectView.frame = userBackgroundImageView.bounds
         blurEffectView.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
         userBackgroundImageView.addSubview(blurEffectView)
-        userBackgroundImageView.sd_setImageWithURL(me.imageUrl())
+        userBackgroundImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
         
-        userHeadImageView.sd_setImageWithURL(me.imageUrl())
+        userHeadImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
         
         userLabel.text = me.firstName
         println("USER \(me.firstName)")
@@ -79,7 +83,7 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
             var cell:ChildHeadCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("ChildHeadCell", forIndexPath: indexPath) as ChildHeadCell
             var maybeChild = self.fetchedResults?.objectAtIndexPath(indexPath) as MOChild?
             if let child = maybeChild {
-                cell.setData(child)
+                cell.setData(child, selected:isSelected(child))
             }
             return cell
         }
@@ -99,7 +103,28 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
 
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == numCells()-1) {
+            return
+        }
+        
+        println("select \(indexPath)")
+        
         var child = self.fetchedResults?.objectAtIndexPath(indexPath)! as MOChild
-        currentPlayDate?.addInvitationChild(child)
+        
+        if let value = self.selectedChildren[child.id] {
+            self.selectedChildren[child.id] = nil
+        }
+        else {
+            self.selectedChildren[child.id] = child
+        }
+        
+        self.collectionView.reloadData()
+    }
+    
+    func isSelected(child:MOChild) -> Bool {
+        if let value = self.selectedChildren[child.id] {
+            return true
+        }
+        return false
     }
 }

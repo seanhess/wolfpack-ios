@@ -15,6 +15,7 @@ extension MOChild: Fetchable, FromJSON {
         child.id = id
         if (firstName != nil) {child.firstName = firstName!}
         if (lastName != nil) {child.lastName = lastName!}
+        child.imageUrl = "http://playingwithsuperpower.com/wp-content/uploads/2014/05/Tick-pic.jpg"
 
         return child
     }
@@ -55,6 +56,11 @@ extension MOChild: Fetchable, FromJSON {
 
         var parentID = json["parentId"].string!
         var parent = MOUser.fetchOrCreate(parentID)
+        
+        if let value = json["imageUrl"].string {
+            println("Hello", value)
+            self.imageUrl = value
+        }
         
         self.parent = parent
         println("Child \(self.firstName) to Parent \(self.parent.firstName) \(self.parent.id)")

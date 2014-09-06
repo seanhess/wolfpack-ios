@@ -27,32 +27,42 @@ class ChildHeadCell : UICollectionViewCell {
         imageView.layer.cornerRadius = imageView.frame.size.height / 2
         imageView.layer.masksToBounds = true
         imageView.layer.borderColor = UIColor.clearColor().CGColor
-        imageView.layer.borderWidth = 2
+        imageView.layer.borderWidth = 3
         
         self.contentView.addSubview(imageView)
     }
 
-    func setData(child:MOChild) {
+    func setData(child:MOChild, selected:Bool) {
         self.child = child
-        let url = NSURL(string:"https://lh3.googleusercontent.com/-vpRiaN7tRHg/AAAAAAAAAAI/AAAAAAAAAAA/LiDbyWt1mUw/s128-c-k/photo.jpg")
+        let url = NSURL(string:child.imageUrl)
         imageView.sd_setImageWithURL(url)
+        println("Child \(child.firstName) selected \(selected)")
+        renderSelected(selected)
     }
     
-    override var selected: Bool {
-        set(value) {
-            super.selected = value
-            
-            if value {
-                imageView.layer.borderColor = UIColor.blueColor().CGColor//UIColor(red: 0.14, green: 0.72, blue: 0.32, alpha: 0.0).CGColor
-            }
-            else {
-                imageView.layer.borderColor = UIColor.clearColor().CGColor
-            }
+    func renderSelected(value:Bool) {
+        if value {
+            imageView.layer.borderColor = UIColor(red: 0.14, green: 0.72, blue: 0.32, alpha: 1.0).CGColor
         }
-        get {
-            return super.selected
+        else {
+            imageView.layer.borderColor = UIColor.clearColor().CGColor
         }
     }
+    
+//    override var selected: Bool {
+//        set(value) {
+//            super.selected = value
+//            
+//            // needs to be driven based on whether it is actually selected
+//            
+//            println("Set Selected \(child?.firstName) \(value)")
+//            
+
+//        }
+//        get {
+//            return super.selected
+//        }
+//    }
 
     
     

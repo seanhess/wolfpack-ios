@@ -14,6 +14,7 @@ class MOChild: NSManagedObject {
     @NSManaged var firstName: String
     @NSManaged var id: String
     @NSManaged var lastName: String
+    @NSManaged var imageUrl: String
     @NSManaged var invitations: NSSet
     @NSManaged var parent: Wolf_Pack.MOUser
 

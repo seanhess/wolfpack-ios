@@ -10,11 +10,12 @@ import CoreData
 
 extension MOUser: FromJSON, Fetchable {
 
-    class func create(id: String, phone: String, firstName: String, lastName: String) -> MOUser {
+    class func create(id: String, phone: String, firstName: String, lastName: String, imageUrl:String) -> MOUser {
         var user = NSEntityDescription.insertNewObjectForEntityForName(MOUser.entityName(), inManagedObjectContext: ModelUtil.defaultMOC) as MOUser
         user.phone = phone
         user.firstName = firstName
         user.id = id
+        user.imageUrl = imageUrl
         user.lastName = lastName
 
         return user
@@ -27,7 +28,7 @@ extension MOUser: FromJSON, Fetchable {
         }
         else {
             // create a new one
-            let user = MOUser.create(id, phone: "", firstName: "", lastName: "")
+            let user = MOUser.create(id, phone: "", firstName: "", lastName: "", imageUrl: "http://playingwithsuperpower.com/wp-content/uploads/2014/05/Tick-pic.jpg")
             return user
         }
     }
@@ -49,11 +50,16 @@ extension MOUser: FromJSON, Fetchable {
     
     func updateFromJSON(json:JSONValue) {
         self.firstName = json["firstName"].string!
+        self.lastName = json["lastName"].string!
+        
+        if let value = json["imageUrl"].string {
+            self.imageUrl = value
+        }
     }
     
-    func imageUrl() -> NSURL {
-        return NSURL(string:"http://www.hess-dietz.de/resources/Frau+Hess.JPG")
-    }
+//    func imageUrl() -> NSURL {
+//        return NSURL(string:"http://www.hess-dietz.de/resources/Frau+Hess.JPG")
+//    }
     
     class func me() -> MOUser {
         return self.fetchOrCreate("540a3f4ac2d2cb0200f96f99")
