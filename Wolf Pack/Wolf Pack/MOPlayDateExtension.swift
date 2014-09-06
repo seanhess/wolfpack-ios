@@ -36,6 +36,13 @@ extension MOPlayDate {
         return nil
     }
     
+    class func requestAll() -> NSFetchRequest {
+        var request = NSFetchRequest(entityName: "PlayDate")
+        var sort = NSSortDescriptor(key: "id", ascending: true)
+        request.sortDescriptors = [sort]
+        return request
+    }
+    
     class func send(playDate:MOPlayDate, invitations:[MOInvitation]) {
         
     }

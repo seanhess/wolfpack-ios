@@ -11,6 +11,7 @@ import CoreData
 
 class MOInvitation: NSManagedObject {
 
+    @NSManaged var id: String
     @NSManaged var confirmationStatus: String
     @NSManaged var playDate: MOPlayDate
     @NSManaged var child: MOChild

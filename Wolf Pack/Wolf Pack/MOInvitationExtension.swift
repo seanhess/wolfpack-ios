@@ -24,4 +24,11 @@ extension MOInvitation {
 
         return invite
     }
+    
+    class func requestAll() -> NSFetchRequest {
+        var request = NSFetchRequest(entityName: "Invitation")
+        var sort = NSSortDescriptor(key: "id", ascending: true)
+        request.sortDescriptors = [sort]
+        return request
+    }
 }

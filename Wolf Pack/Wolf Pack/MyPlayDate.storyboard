@@ -79,10 +79,6 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="aLl-se-1th" id="IIi-PN-BRq"/>
-                                    <outlet property="delegate" destination="aLl-se-1th" id="cVq-oD-SEZ"/>
-                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7i-Mq-shY">
                                 <rect key="frame" x="0.0" y="517" width="158" height="51"/>
@@ -108,6 +104,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red-plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bhy-9B-e3a">
                                 <rect key="frame" x="121" y="533" width="19" height="18"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6k-dq-p4N">
+                                <rect key="frame" x="274" y="20" width="30" height="30"/>
+                                <state key="normal" title="x">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close" destination="aLl-se-1th" eventType="touchUpInside" id="NHT-5b-fhM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGI-uw-Tme">
+                                <rect key="frame" x="15" y="479" width="289" height="30"/>
+                                <state key="normal" title="Delete PlayDate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="delete" destination="aLl-se-1th" eventType="touchUpInside" id="XKY-YF-dLs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -117,7 +131,6 @@
                         <size key="landscapeSize" width="568" height="320"/>
                     </simulatedScreenMetrics>
                     <connections>
-                        <outlet property="collectionView" destination="VEe-Fp-VCe" id="BWe-lO-8vf"/>
                         <outlet property="userBackgroundImageView" destination="9zm-KD-A80" id="Bsx-W6-Zmg"/>
                         <outlet property="userHeadImageView" destination="NoO-Sf-jW6" id="gxQ-5g-goD"/>
                     </connections>

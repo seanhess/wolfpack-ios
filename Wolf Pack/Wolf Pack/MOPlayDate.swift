@@ -11,6 +11,7 @@ import CoreData
 
 class MOPlayDate: NSManagedObject {
 
+    @NSManaged var id: String
     @NSManaged var date: NSDate
     @NSManaged var location: String
     @NSManaged var owner: MOUser

@@ -15,20 +15,38 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet var userHeadImageView:UIImageView!
     @IBOutlet var userLabel:UILabel!
 
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var viewButton: UIButton!
     
     var me:MOUser!
     var myKidsInvitations:[InvitationStatus] = []
+    var playDate:MOPlayDate?
     
     @IBOutlet var collectionView:UICollectionView!
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true
+        
+        // INVITATIONS
+        let playDateResults = ModelUtil.execute(MOPlayDate.requestAll()) as [MOPlayDate]
+        playDate = playDateResults.first
+        viewButton.hidden = playDate == nil
+        
+        // THE CHILDRENS
+        var request = MOChild.childrenRequest(me.id)
+        let result = ModelUtil.execute(request) as [MOChild]
+        myKidsInvitations = result.map({(child) in InvitationStatus(child: child, invited:false, accepted:false)})
+        collectionView.reloadData()
+        
+        createButton.hidden = kidsInvited().count == 0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.collectionView.allowsMultipleSelection = true
+        self.viewButton.hidden = true
+        self.createButton.hidden = true
         
         me = MOUser.me()
         
@@ -43,19 +61,11 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         userHeadImageView.sd_setImageWithURL(NSURL(string:me.imageUrl))
         
         userLabel.text = me.firstName
-        
-        // THE CHILDRENS
-
-        var request = MOChild.childrenRequest(me.id)
-        let result = ModelUtil.execute(request) as [MOChild]
-        myKidsInvitations = result.map({(child) in InvitationStatus(child: child, invited:false, accepted:false)})
-        collectionView.reloadData()
     }
     
 //    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
 //
 //    }
-    
     
     /// NSFETCHED RESULTS
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
@@ -89,7 +99,12 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
     func numCells() -> Int {
         return myKidsInvitations.count+1
     }
-
+    
+    func kidsInvited() -> [InvitationStatus] {
+        return myKidsInvitations.filter({(status) in
+            return status.invited
+        })
+    }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == numCells()-1) {
@@ -98,6 +113,7 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         
         var status = myKidsInvitations[indexPath.row]
         status.invited = !status.invited
+        createButton.hidden = kidsInvited().count == 0
         self.collectionView.reloadData()
     }
     
@@ -105,11 +121,16 @@ class MainViewController : UIViewController, UICollectionViewDataSource, UIColle
         // load the other screen
         let sb = UIStoryboard(name: "InvitePlayDate", bundle: nil)
         let vc = sb.instantiateInitialViewController() as InvitePlayDateViewController
-        vc.myKids = myKidsInvitations.filter({ (status) in
-            return status.invited
-        }).map({ (status) in
+        vc.myKids = kidsInvited().map({ (status) in
             return status.child
         })
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func viewPlaydate(sender: AnyObject) {
+        let sb = UIStoryboard(name: "MyPlayDate", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as MyPlayDateViewController
+        vc.playDate = playDate!
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

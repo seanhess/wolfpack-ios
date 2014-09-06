@@ -19,7 +19,7 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
     var me:MOUser!
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
+
     }
     
     override func viewDidLoad() {
@@ -75,7 +75,19 @@ class InvitePlayDateViewController : UIViewController, UICollectionViewDataSourc
         
         var allInvitations = otherInvitations + kidInvitations
         
+        println("CREATED")
+        ModelUtil.commitDefaultMOC()
+        
+        let sb = UIStoryboard(name: "MyPlayDate", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as MyPlayDateViewController
+        vc.playDate = playDate
+        self.navigationController?.pushViewController(vc, animated: true)
+        
         // now POST it. wheeeee
+    }
+    
+    @IBAction func close(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 }

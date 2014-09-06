@@ -12,6 +12,7 @@
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
             <string>OpenSans-Semibold</string>
+            <string>OpenSans-Semibold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -76,6 +77,18 @@
                                 <color key="textColor" red="0.62745100259780884" green="0.62745100259780884" blue="0.62745100259780884" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6X4-AD-Jcw" userLabel="VIEW PLAYDATE">
+                                <rect key="frame" x="0.0" y="509" width="320" height="59"/>
+                                <color key="backgroundColor" red="0.10588236153125763" green="0.33725491166114807" blue="0.98431378602981567" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="VIEW PLAYDATE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewPlaydate:" destination="MQR-8R-KKj" eventType="touchUpInside" id="c8F-vi-A1u"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PnR-wo-JLU">
                                 <rect key="frame" x="0.0" y="509" width="320" height="59"/>
                                 <color key="backgroundColor" red="0.13333334028720856" green="0.75294125080108643" blue="0.39215689897537231" alpha="1" colorSpace="deviceRGB"/>
@@ -89,7 +102,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BsM-at-CPS">
-                                <rect key="frame" x="13" y="228" width="291" height="273"/>
+                                <rect key="frame" x="13" y="228" width="291" height="130"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sqh-t1-SYa">
                                     <size key="itemSize" width="50" height="50"/>
@@ -153,9 +166,11 @@
                     </simulatedScreenMetrics>
                     <connections>
                         <outlet property="collectionView" destination="BsM-at-CPS" id="Wec-Rc-K81"/>
+                        <outlet property="createButton" destination="PnR-wo-JLU" id="YPl-P1-vfX"/>
                         <outlet property="userBackgroundImageView" destination="X83-tj-pbU" id="CmJ-RP-GqO"/>
                         <outlet property="userHeadImageView" destination="41c-U7-uPp" id="JAF-Ee-Pom"/>
                         <outlet property="userLabel" destination="clR-lG-lcv" id="8im-7A-MGc"/>
+                        <outlet property="viewButton" destination="6X4-AD-Jcw" id="ioU-ae-QQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znD-aK-XOT" userLabel="First Responder" sceneMemberID="firstResponder"/>

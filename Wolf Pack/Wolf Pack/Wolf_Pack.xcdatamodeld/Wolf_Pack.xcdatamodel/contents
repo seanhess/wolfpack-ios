@@ -10,11 +10,13 @@
     </entity>
     <entity name="Invitation" representedClassName="Wolf_Pack.MOInvitation" syncable="YES">
         <attribute name="confirmationStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="child" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Child" inverseName="invitations" inverseEntity="Child" syncable="YES"/>
         <relationship name="playDate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayDate" inverseName="invitations" inverseEntity="PlayDate" syncable="YES"/>
     </entity>
     <entity name="PlayDate" representedClassName="Wolf_Pack.MOPlayDate" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="invitations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Invitation" inverseName="playDate" inverseEntity="Invitation" syncable="YES"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="playDates" inverseEntity="User" syncable="YES"/>
@@ -31,8 +33,8 @@
     </entity>
     <elements>
         <element name="Child" positionX="-45" positionY="45" width="128" height="135"/>
-        <element name="Invitation" positionX="-36" positionY="72" width="128" height="90"/>
-        <element name="PlayDate" positionX="-54" positionY="36" width="128" height="105"/>
+        <element name="Invitation" positionX="-36" positionY="72" width="128" height="103"/>
+        <element name="PlayDate" positionX="-54" positionY="36" width="128" height="120"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
