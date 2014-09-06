@@ -40,6 +40,8 @@
 		786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */; };
 		7894840619BAA9F000211104 /* InvitationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894840519BAA9F000211104 /* InvitationStatus.swift */; };
 		DA1B7B8819BB05C900D28643 /* MyPlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */; };
+		DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683419BB11FA007B1C02 /* MessagesViewController.swift */; };
+		DA50683719BB12D4007B1C02 /* ComposeMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		91BE4421C2E84CE8A6264197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B39E5BBCC8074B6380BF3396 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlayDateViewController.swift; sourceTree = "<group>"; };
+		DA50683419BB11FA007B1C02 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,8 @@
 		786ABEB819B97869006EFA96 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA50683619BB12D4007B1C02 /* ComposeMessageViewController.swift */,
+				DA50683419BB11FA007B1C02 /* MessagesViewController.swift */,
 				DA1B7B8719BB05C900D28643 /* MyPlayDateViewController.swift */,
 				786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */,
 				786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */,
@@ -424,6 +430,8 @@
 				785E33F819BA427A003D7048 /* ChildHeadCell.swift in Sources */,
 				7894840619BAA9F000211104 /* InvitationStatus.swift in Sources */,
 				4A9B6DC219BA6E19008D3863 /* MOChild.swift in Sources */,
+				DA50683719BB12D4007B1C02 /* ComposeMessageViewController.swift in Sources */,
+				DA50683519BB11FA007B1C02 /* MessagesViewController.swift in Sources */,
 				4AEBD6BB19B9E5DA007E714F /* ModelUtil.swift in Sources */,
 				4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */,
 				4AEBD6B919B977A4007E714F /* CoreDataModelManager.swift in Sources */,
