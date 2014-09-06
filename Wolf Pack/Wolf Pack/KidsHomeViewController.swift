@@ -7,22 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
-class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet var userBackgroundImageView:UIImageView!
     @IBOutlet var userHeadImageView:UIImageView!
     @IBOutlet var userLabel:UILabel!
     
-    let child = MOChild.create("henry", firstName: "asdf", lastName: "asdf")
     var me:MOUser!
-    var testHead:KidHeadView?
+    var fetchedResults:NSFetchedResultsController?
+    
+    var currentPlayDate:MOPlayDate?
     
     @IBOutlet var collectionView:UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.collectionView.allowsMultipleSelection = true
+        
         me = MOUser.me()
+        currentPlayDate = MOPlayDate.create(NSDate(), location: "", owner: me)
         
         // BLURRRRY
         var blurEffect = UIBlurEffect(style: .Light)
@@ -34,34 +40,66 @@ class KidsHomeViewController : UIViewController, UICollectionViewDataSource, UIC
         
         userHeadImageView.sd_setImageWithURL(me.imageUrl())
         
-        userLabel.text = me.fullName()
+        userLabel.text = me.firstName
+        println("USER \(me.firstName)")
         
         // Hide navigation bar
         self.navigationController?.navigationBarHidden = true
+        
+        // THE CHILDRENS
+        var error:NSError?
+        self.fetchedResults = NSFetchedResultsController(fetchRequest: MOChild.childrenRequest(me.id), managedObjectContext: ModelUtil.defaultMOC, sectionNameKeyPath: nil, cacheName: nil)
+        self.fetchedResults?.delegate = self
+        self.fetchedResults?.performFetch(&error)
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        
+//    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+//        
+//    }
+    
+    
+    /// NSFETCHED RESULTS
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.collectionView.reloadData()
     }
+
+    
+    /// TABLE VIEW
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if (indexPath.row == 4) {
+        if (indexPath.row == numCells()-1) {
             var cell:UICollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("AddKidCell", forIndexPath: indexPath) as UICollectionViewCell
             return cell
         }
         else {
-            var cell:UICollectionViewCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("KidCollectionViewCell", forIndexPath: indexPath) as UICollectionViewCell
-            var headView = cell.contentView.subviews[0] as KidHeadView
-            headView.updateChild(child)
+            var cell:ChildHeadCell = self.collectionView.dequeueReusableCellWithReuseIdentifier("ChildHeadCell", forIndexPath: indexPath) as ChildHeadCell
+            var maybeChild = self.fetchedResults?.objectAtIndexPath(indexPath) as MOChild?
+            if let child = maybeChild {
+                cell.setData(child)
+            }
             return cell
         }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4+1 // for the button
+        return numCells()
+    }
+    
+    func numCells() -> Int {
+        if let sections = self.fetchedResults?.sections {
+            var section = sections[0] as NSFetchedResultsSectionInfo
+            return section.numberOfObjects+1
+        }
+        return 1
+    }
+
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var child = self.fetchedResults?.objectAtIndexPath(indexPath)! as MOChild
+        currentPlayDate?.addInvitationChild(child)
     }
 }

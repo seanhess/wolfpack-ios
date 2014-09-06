@@ -43,7 +43,6 @@ extension MOChild: Fetchable, FromJSON {
             var child = self.fetchOrCreate(id)
             child.updateFromJSON(json)
         }
-
     }
 
     class func entityName () -> String {
@@ -56,6 +55,22 @@ extension MOChild: Fetchable, FromJSON {
 
         var parentID = json["parentId"].string!
         var parent = MOUser.fetchOrCreate(parentID)
+        
         self.parent = parent
+        println("Child \(self.firstName) to Parent \(self.parent.firstName) \(self.parent.id)")
     }
+    
+    class func childrenRequest(parentId:String) -> NSFetchRequest {
+        var request = self.allChildren()
+        request.predicate = NSPredicate(format: "parent.id == %@", parentId)
+        return request
+    }
+    
+    class func allChildren() -> NSFetchRequest {
+        var request = NSFetchRequest(entityName: self.entityName())
+        var sort = NSSortDescriptor(key: "id", ascending: true)
+        request.sortDescriptors = [sort]
+        return request
+    }
+    
 }

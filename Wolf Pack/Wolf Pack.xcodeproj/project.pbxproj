@@ -19,7 +19,7 @@
 		4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBD6BC19BA005D007E714F /* MOUserExtension.swift */; };
 		4AF5776519BA4D47006D2DDF /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF5776419BA4D47006D2DDF /* Fetchable.swift */; };
 		6898E2E64ECB416FBED9B3BE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E5BBCC8074B6380BF3396 /* libPods.a */; };
-		785E33F819BA427A003D7048 /* KidHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F619BA427A003D7048 /* KidHeadView.swift */; };
+		785E33F819BA427A003D7048 /* ChildHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F619BA427A003D7048 /* ChildHeadCell.swift */; };
 		785E33F919BA427A003D7048 /* KidsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E33F719BA427A003D7048 /* KidsHomeViewController.swift */; };
 		785E33FD19BA5DD2003D7048 /* woot.png in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FC19BA5DD2003D7048 /* woot.png */; };
 		785E33FF19BA6921003D7048 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */; };
@@ -38,6 +38,7 @@
 		786ABEBC19BA0E73006EFA96 /* PlayDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */; };
 		786ABEBE19BA2344006EFA96 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEBD19BA2344006EFA96 /* FromJSON.swift */; };
 		786ABEC119BA2813006EFA96 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */; };
+		7894840619BAA9F000211104 /* InvitationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7894840519BAA9F000211104 /* InvitationStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +64,7 @@
 		4AEBD6BA19B9E5DA007E714F /* ModelUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUtil.swift; sourceTree = "<group>"; };
 		4AEBD6BC19BA005D007E714F /* MOUserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MOUserExtension.swift; sourceTree = "<group>"; };
 		4AF5776419BA4D47006D2DDF /* Fetchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
-		785E33F619BA427A003D7048 /* KidHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidHeadView.swift; sourceTree = "<group>"; };
+		785E33F619BA427A003D7048 /* ChildHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildHeadCell.swift; sourceTree = "<group>"; };
 		785E33F719BA427A003D7048 /* KidsHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KidsHomeViewController.swift; sourceTree = "<group>"; };
 		785E33FC19BA5DD2003D7048 /* woot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woot.png; sourceTree = "<group>"; };
 		785E33FE19BA6921003D7048 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayDateViewController.swift; sourceTree = "<group>"; };
 		786ABEBD19BA2344006EFA96 /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSON.swift; sourceTree = "<group>"; };
 		786ABEC019BA2813006EFA96 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		7894840519BAA9F000211104 /* InvitationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationStatus.swift; sourceTree = "<group>"; };
 		91BE4421C2E84CE8A6264197 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B39E5BBCC8074B6380BF3396 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				786ABE9719B9685D006EFA96 /* Wolf_Pack.xcdatamodeld */,
 				4AEBD6B819B977A4007E714F /* CoreDataModelManager.swift */,
 				4AEBD6BA19B9E5DA007E714F /* ModelUtil.swift */,
+				7894840519BAA9F000211104 /* InvitationStatus.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -242,7 +245,7 @@
 				786ABEB919B9788C006EFA96 /* PlayDatesViewController.swift */,
 				786ABEBB19BA0E73006EFA96 /* PlayDateViewController.swift */,
 				785E33F719BA427A003D7048 /* KidsHomeViewController.swift */,
-				785E33F619BA427A003D7048 /* KidHeadView.swift */,
+				785E33F619BA427A003D7048 /* ChildHeadCell.swift */,
 				785E340219BA6BCC003D7048 /* CircleImageView.swift */,
 			);
 			name = Views;
@@ -415,7 +418,8 @@
 				786ABE9919B9685D006EFA96 /* Wolf_Pack.xcdatamodeld in Sources */,
 				4ADAF5C319BA25AA00F81B39 /* MOChildExtension.swift in Sources */,
 				786ABEBA19B9788C006EFA96 /* PlayDatesViewController.swift in Sources */,
-				785E33F819BA427A003D7048 /* KidHeadView.swift in Sources */,
+				785E33F819BA427A003D7048 /* ChildHeadCell.swift in Sources */,
+				7894840619BAA9F000211104 /* InvitationStatus.swift in Sources */,
 				4A9B6DC219BA6E19008D3863 /* MOChild.swift in Sources */,
 				4AEBD6BB19B9E5DA007E714F /* ModelUtil.swift in Sources */,
 				4AEBD6BD19BA005D007E714F /* MOUserExtension.swift in Sources */,

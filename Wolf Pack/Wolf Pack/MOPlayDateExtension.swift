@@ -17,4 +17,25 @@ extension MOPlayDate {
 
         return playDate
     }
+    
+    func addInvitationChild(child:MOChild) -> MOInvitation {
+        if let invitation = self.findInvitation(child) {
+            return invitation
+        }
+        else {
+            return MOInvitation.create(child, status: "", playDate: self)
+        }
+    }
+    
+    func findInvitation(child:MOChild) -> MOInvitation? {
+        for element in self.invitations {
+            if let invitation = element as? MOInvitation {
+                if invitation.child.id == child.id {
+                    return invitation
+                }
+            }
+        }
+        return nil
+    }
+    
 }
