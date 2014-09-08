@@ -49,8 +49,8 @@ extension MOInvitation: ToJSON {
         request.HTTPBody = self.toJSON().description.dataUsingEncoding(NSUTF8StringEncoding)
 
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, hasError) in
-            println(response)
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+//            println(response)
+//            println(NSString(data: data, encoding: NSUTF8StringEncoding))
 //            let json = JSONValue(data)
 //            var id = json["_id"].string!
 //            self.id = id
